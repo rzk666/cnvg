@@ -1,4 +1,16 @@
 :root{
+    // Scrollbar
+    *::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+      }
+      *::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      *::-webkit-scrollbar-thumb {
+        background-color: var(--main-blue);
+        border-radius: 20px;
+      }  
   // ----- Global Variables ----- //
   --nav-height: 52px;
   // Colors
@@ -16,6 +28,7 @@
   }
   // ----- Global Styles ----- //
   #root{
+      color: white;
       position: fixed;
       width: 100vw!important;
       height: 100vh!important;
