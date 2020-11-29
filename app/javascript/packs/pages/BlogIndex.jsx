@@ -9,4 +9,6 @@ import BlogView from '../views/BlogView';
 
 const Blog = (props) => <BlogController {...props} View={BlogView} />;
 
-export default (page(Blog, BLOG));
+// export default (page(Blog, BLOG));
+
+export default Blog;
