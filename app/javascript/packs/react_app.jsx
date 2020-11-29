@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // Components
 import App from './App';
+// Global styles
+import './Globals.scss';
 
 export default App;
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <App name="React" />,
-    document.body.appendChild(document.createElement('div')),
+    <App />,
+    document.getElementById('root'),
   );
 });
