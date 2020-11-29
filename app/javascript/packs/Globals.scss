@@ -1,6 +1,19 @@
 :root{
   // ----- Global Variables ----- //
   --nav-height: 52px;
+  // Colors
+  --main-background: #35363A;
+  --main-solid-blue: #2970be; 
+  --main-solid-black: #202124;
+  // ----- Global Classes ----- //
+  .hover_clickable{
+      opacity: 0.75;
+      transition: opacity 0.3s ease-in;
+      cursor: pointer;
+      &:hover{
+          opacity: 1;
+      }
+  }
   // ----- Global Styles ----- //
   #root{
       position: fixed;
@@ -8,6 +21,7 @@
       height: 100vh!important;
   }
   body,html {
+      background-color: var(--main-background);
       font-family: Roboto;
       margin: 0;
       padding: 0;
