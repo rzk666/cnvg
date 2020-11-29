@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'pages#index'
+
+  # Temp
+  namespace :api do
+    namespace :v1 do
+      resources :drivers, param: :id
+      resources :cars
+    end
+  end
+
+  get '*path', to: 'pages#index', via: :all
 end

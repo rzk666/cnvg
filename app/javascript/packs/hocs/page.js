@@ -7,7 +7,7 @@ const globalHocs = compose(
 );
 
 const page = (Component, currentPage) => {
-  const hocsToApply = HOCS_MAP[currentPage];
+  const hocsToApply = currentPage === '/' ? HOCS_MAP.home : HOCS_MAP[currentPage];
   let hocsList = ((a) => a); // Just a dummy function so we can compose
   hocsToApply.forEach((hoc) => {
     hocsList = compose(hocsList, hoc);
