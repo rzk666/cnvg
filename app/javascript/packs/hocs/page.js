@@ -1,10 +1,12 @@
 import { compose } from '../utils/libs';
 // Global hocs
 import WithMaterialDarkTheme from './WithMaterialDarkTheme';
+import WithAlerts from './WithAlerts';
 // HOCs mapping
 import HOCS_MAP from './hocsMap';
 
 const globalHocs = compose(
+  WithAlerts,
   WithMaterialDarkTheme,
 );
 
