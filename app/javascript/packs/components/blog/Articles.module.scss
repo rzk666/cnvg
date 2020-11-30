@@ -1,9 +1,11 @@
 .container{
     flex:1;
-    overflow: auto;
     padding: 30px;
     display: flex;
     flex-direction: column;
+    .articles_container{
+        overflow: auto;
+    }
     .articles{
       display: 'flex';
       flex-direction: 'column';

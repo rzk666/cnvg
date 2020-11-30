@@ -33,7 +33,7 @@ const AddNewArticle = ({ onSubmit }) => {
         onSubmit={async (values, formikProps) => {
           const { resetForm } = formikProps;
           try {
-            //   await onSubmit(values);
+            await onSubmit(values);
             newAlert({ severity: 'success', message: 'Successfully added a new article!' });
             resetForm(initialValues);
           } catch (e) {

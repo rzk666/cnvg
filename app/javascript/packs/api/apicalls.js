@@ -1,24 +1,18 @@
-// // Config
-// import config from './config';
-// // Utils
-// import HttpRequest from '../utils/HttpRequest';
+import axios from 'axios';
 
-// // export const getLocationInfo = (key) => HttpRequest()({
-// //   method: 'get',
-// //   url: `${config.api.url}/locations/v1/${key}?apikey=${config.credentials.weatherApi}`,
-// // });
+const csrfToken = document.querySelector('[name=csrf-token]').content;
+axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken;
 
-// // export const searchCities = (query) => HttpRequest()({
-// //   method: 'get',
-// //   url: `${config.api.url}/locations/v1/cities/autocomplete?apikey=${config.credentials.weatherApi}&q=${query}`,
-// // });
+// ----- Consts & Dicts ----- //
+const API_ROUTE = 'api/v1';
 
-// // export const getWeatherByKey = (key) => HttpRequest()({
-// //   method: 'get',
-// //   url: `${config.api.url}/currentconditions/v1/${key}?apikey=${config.credentials.weatherApi}`,
-// // });
+export const fetchArticles = () => axios.create()({
+  method: 'get',
+  url: `${API_ROUTE}/articles`,
+});
 
-// // export const fetchByGeoLocation = (lat, lng) => HttpRequest()({
-// //   method: 'get',
-// //   url: `${config.api.url}/locations/v1/cities/geoposition/search?apikey=${config.credentials.weatherApi}&q=${lat},${lng}`,
-// // });
+export const addArticle = (data) => axios.create()({
+  method: 'post',
+  url: `${API_ROUTE}/articles`,
+  data,
+});
