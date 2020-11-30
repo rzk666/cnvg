@@ -12,20 +12,17 @@ import { Commute, Book } from '@material-ui/icons';
 import styles from './Home.module.scss';
 
 // ----- Help Components ----- //
-const RadialButton = ({ onClick, type }) => {
-  const x = 5;
-  return (
-    <div className={classnames(styles.button_container, 'hover_clickable')}>
-      <Button
-        onClick={() => onClick()}
-        className={styles.radial_button}
-      >
-        {type === 'Blog' ? <Book /> : <Commute />}
-      </Button>
-      {`${type} app`}
-    </div>
-  );
-};
+const RadialButton = ({ onClick, type }) => (
+  <div className={classnames(styles.button_container, 'hover_clickable')}>
+    <Button
+      onClick={() => onClick()}
+      className={styles.radial_button}
+    >
+      {type === 'Blog' ? <Book /> : <Commute />}
+    </Button>
+    {`${type} app`}
+  </div>
+);
 
 const HomeView = () => {
   const history = useHistory();

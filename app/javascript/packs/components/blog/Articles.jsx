@@ -12,6 +12,7 @@ const Article = ({ title, text }) => (
 
 const Articles = ({ data }) => (
   <div className={styles.container}>
+    <h1>Articles List</h1>
     <div className={styles.articles}>
       {data.map((article) => {
         const { title, text } = article;
