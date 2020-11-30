@@ -21,7 +21,11 @@ const App = () => (
     <Switch>
       <Route path={HOME} exact render={(props) => (<HomeIndex {...props} />)} />
       <Route path={`/${BLOG}`} exact render={(props) => (<BlogIndex {...props} />)} />
-      <Route path={`/${CARS}`} render={(props) => (<CarsIndex {...props} />)} />
+      <Route path={`/${CARS}`} exact render={(props) => (<CarsIndex {...props} />)} />
+      {/* <Switch>
+        <Route path={`/${CARS}/create`} exact render={(props) => (<CarsIndex {...props} />)} />
+        <Route path={`/${CARS}/:id`} exact render={(props) => (<CarsIndex {...props} />)} />
+      </Switch> */}
       {/* <Route path={`/${DRIVERS}`} exact render={(props) => (<DriversIndex {...props} />)} /> */}
       {/* <Route path={`/${CARS_AND_DRIVERS}`} exact render={(props) => (<CarsAndDriversIndex {...props} />)} /> */}
     </Switch>
