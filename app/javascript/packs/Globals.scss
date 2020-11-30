@@ -1,0 +1,52 @@
+:root{
+    // Scrollbar
+    *::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+      }
+      *::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      *::-webkit-scrollbar-thumb {
+        background-color: var(--main-blue);
+        border-radius: 20px;
+      }  
+  // ----- Global Variables ----- //
+  --nav-height: 52px;
+  // Colors
+  --main-solid-blue: #2970be; 
+  --main-solid-black: #202124;
+  // ----- Global Classes ----- //
+  .hover_clickable{
+      opacity: 0.75;
+      transition: opacity 0.3s ease-in;
+      cursor: pointer;
+      &:hover{
+          opacity: 1;
+      }
+  }
+  // ----- Global Styles ----- //
+  #root{
+      color: white;
+      position: fixed;
+      width: 100vw!important;
+      height: 100vh!important;
+  }
+  body,html {
+      font-family: Roboto;
+      margin: 0;
+      padding: 0;
+      width: 100vw!important;
+      height: 100vh!important;
+  }
+  * {
+      box-sizing: border-box;
+  }
+  img{
+      object-fit: contain;
+  }
+  a{
+      color: inherit;
+      text-decoration: none;
+  }
+}

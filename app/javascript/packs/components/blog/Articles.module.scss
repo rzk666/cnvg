@@ -1,0 +1,20 @@
+.container{
+    flex:1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    .articles_container{
+        overflow: auto;
+    }
+    .articles{
+      display: 'flex';
+      flex-direction: 'column';
+      width: 100%;
+      .article_container{
+          h2{
+              color: #CC869D;
+              font-size: 20px;
+          }
+      }
+    }
+}
