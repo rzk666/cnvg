@@ -5,7 +5,8 @@ import App from './App';
 // Global styles
 import './Globals.scss';
 
-export default App;
+// I had a very weird problem trying to expose env variables to the client,
+// I tried using dotenv
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
