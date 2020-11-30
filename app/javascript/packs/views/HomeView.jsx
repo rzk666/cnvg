@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import { useHistory } from 'react-router-dom';
 import classnames from 'classnames';
 // Universasl
-import { BLOG, MAINAPP } from '../universal/pages';
+import { BLOG, CARS } from '../universal/pages';
 // Icons
 import { Commute, Book } from '@material-ui/icons';
 // Styles
@@ -33,7 +33,7 @@ const HomeView = () => {
   return (
     <div className={styles.container}>
       <RadialButton type="Blog" onClick={() => history.push({ pathname: `/${BLOG}` })} />
-      <RadialButton type="Cars" onClick={() => history.push({ pathname: `/${MAINAPP}` })} />
+      <RadialButton type="Cars" onClick={() => history.push({ pathname: `/${CARS}` })} />
     </div>
   );
 };

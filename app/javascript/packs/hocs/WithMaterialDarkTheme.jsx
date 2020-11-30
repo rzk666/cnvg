@@ -16,6 +16,11 @@ const WithMaterialDarkThemeHOC = (ComposedComponent) => {
           background: '#CC869D',
         },
       },
+      MuiAppBar: {
+        root: {
+          height: '52px;',
+        },
+      },
       MuiPaper: {
         root: {
           height: '100%',

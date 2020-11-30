@@ -1,0 +1,11 @@
+.navbar_content{
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding: 10px;
+    .nav_link{
+        margin-left: 15px;
+        color: white;
+    }
+}

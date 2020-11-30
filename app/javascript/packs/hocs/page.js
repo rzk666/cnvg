@@ -16,7 +16,7 @@ const page = (Component, currentPage) => {
   hocsToApply.forEach((hoc) => {
     hocsList = compose(hocsList, hoc);
   });
-  hocsList = compose(globalHocs, hocsList);
+  hocsList = compose(hocsList, globalHocs);
   return hocsList(Component);
 };
 
