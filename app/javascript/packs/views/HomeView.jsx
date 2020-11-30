@@ -1,4 +1,6 @@
 import React from 'react';
+// Animations
+import { motion } from 'framer-motion';
 // Components
 import Button from '@material-ui/core/Button';
 // Utils
@@ -14,12 +16,14 @@ import styles from './Home.module.scss';
 // ----- Help Components ----- //
 const RadialButton = ({ onClick, type }) => (
   <div className={classnames(styles.button_container, 'hover_clickable')}>
-    <Button
-      onClick={() => onClick()}
-      className={styles.radial_button}
-    >
-      {type === 'Blog' ? <Book /> : <Commute />}
-    </Button>
+    <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+      <Button
+        onClick={() => onClick()}
+        className={styles.radial_button}
+      >
+        {type === 'Blog' ? <Book /> : <Commute />}
+      </Button>
+    </motion.div>
     {`${type} app`}
   </div>
 );
