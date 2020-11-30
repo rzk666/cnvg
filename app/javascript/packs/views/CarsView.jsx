@@ -1,14 +1,9 @@
 import React from 'react';
 // Components
-import CarsTable from '../components/cars/CarsTable';
-// Styles
-import styles from './Cars.module.scss';
+import MainList from '../components/MainList';
 
 const CarsView = ({ data }) => (
-  <div className={styles.container}>
-    <h2>Cars List</h2>
-    <CarsTable data={data} />
-  </div>
+  <MainList entity="Car" data={data} />
 );
 
 export default CarsView;

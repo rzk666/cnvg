@@ -6,7 +6,8 @@ import {
   TableBody,
   TableCell,
   TableContainer,
-  TableHead, TableRow,
+  TableHead,
+  TableRow,
 } from '@material-ui/core';
 // Utils
 import { makeStyles } from '@material-ui/core/styles';
@@ -14,17 +15,16 @@ import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
   wrapper: {
-    width: '60%',
-    maxHeight: 500,
-    marginTop: 100,
+    width: '100%',
+    height: 700,
   },
   container: {
-    maxHeight: 500,
+    maxHeight: 700,
   },
   img: {
     width: '100px',
     height: '100px',
-    borderRadius: '1000px',
+    borderRadius: '256px',
   },
   row: {
     height: 120,
@@ -34,6 +34,14 @@ const useStyles = makeStyles({
       cursor: 'pointer',
       opacity: 1,
     },
+  },
+  cell: {
+    fontSize: 18,
+  },
+  dot: {
+    height: 25,
+    width: 25,
+    borderRadius: '256px',
   },
 });
 
@@ -54,6 +62,17 @@ const rows = [
   createData(5, 'Honda', 'Accord', 'blue', 'https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/audi-a1-2820a.jpg'),
   createData(5, 'Honda', 'Accord', 'blue', 'https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/audi-a1-2820a.jpg'),
 ];
+
+// ----- Help Components ----- //
+const ColoredDot = ({ color }) => {
+  const classes = useStyles();
+  return (
+    <div
+      style={{ background: color }}
+      className={classes.dot}
+    />
+  );
+};
 
 const CarsTable = () => {
   const classes = useStyles();
@@ -82,9 +101,9 @@ const CarsTable = () => {
                   className={classes.row}
                   onClick={() => history.push(`${pathname}/${id}`)}
                 >
-                  <TableCell>{title}</TableCell>
-                  <TableCell>{type}</TableCell>
-                  <TableCell>{color}</TableCell>
+                  <TableCell className={classes.cell}>{title}</TableCell>
+                  <TableCell className={classes.cell}>{type}</TableCell>
+                  <TableCell><ColoredDot color={color} /></TableCell>
                   <TableCell align="center">
                     <img
                       src={image}
