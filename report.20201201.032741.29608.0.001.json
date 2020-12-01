@@ -1,0 +1,566 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20201201.032741.29608.0.001.json",
+    "dumpEventTime": "2020-12-01T03:27:41Z",
+    "dumpEventTimeStamp": "1606786061386",
+    "processId": 29608,
+    "cwd": "C:\\Users\\Rozadin\\Desktop\\Rails\\cnvg-task",
+    "commandLine": [
+      "node",
+      "C:\\Users\\Rozadin\\Desktop\\Rails\\cnvg-task\\node_modules\\.bin\\\\..\\webpack-dev-server\\bin\\webpack-dev-server.js",
+      "--config",
+      "C:/Users/Rozadin/Desktop/Rails/cnvg-task/config/webpack/development.js"
+    ],
+    "nodejsVersion": "v12.16.1",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.16.1",
+      "v8": "7.8.279.23-node.31",
+      "uv": "1.34.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.4",
+      "http_parser": "2.9.3",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.16.1/node-v12.16.1-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.16.1/node-v12.16.1.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.16.1/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.18363",
+    "osVersion": "Windows 10 Pro",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i9-9900KF CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 37244828,
+        "nice": 0,
+        "sys": 40606281,
+        "idle": 1368555546,
+        "irq": 19786328
+      },
+      {
+        "model": "Intel(R) Core(TM) i9-9900KF CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 28164984,
+        "nice": 0,
+        "sys": 16586140,
+        "idle": 1401655234,
+        "irq": 258453
+      },
+      {
+        "model": "Intel(R) Core(TM) i9-9900KF CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 74376906,
+        "nice": 0,
+        "sys": 19425781,
+        "idle": 1352603671,
+        "irq": 586812
+      },
+      {
+        "model": "Intel(R) Core(TM) i9-9900KF CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 50330734,
+        "nice": 0,
+        "sys": 10132234,
+        "idle": 1385943390,
+        "irq": 301515
+      },
+      {
+        "model": "Intel(R) Core(TM) i9-9900KF CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 44278250,
+        "nice": 0,
+        "sys": 11992812,
+        "idle": 1390135296,
+        "irq": 379843
+      },
+      {
+        "model": "Intel(R) Core(TM) i9-9900KF CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 44531187,
+        "nice": 0,
+        "sys": 3712843,
+        "idle": 1398162328,
+        "irq": 119812
+      },
+      {
+        "model": "Intel(R) Core(TM) i9-9900KF CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 55318046,
+        "nice": 0,
+        "sys": 8556562,
+        "idle": 1382531750,
+        "irq": 284718
+      },
+      {
+        "model": "Intel(R) Core(TM) i9-9900KF CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 106766109,
+        "nice": 0,
+        "sys": 4900734,
+        "idle": 1334739515,
+        "irq": 204046
+      },
+      {
+        "model": "Intel(R) Core(TM) i9-9900KF CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 38114328,
+        "nice": 0,
+        "sys": 8652437,
+        "idle": 1399639593,
+        "irq": 353218
+      },
+      {
+        "model": "Intel(R) Core(TM) i9-9900KF CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 30663421,
+        "nice": 0,
+        "sys": 3176984,
+        "idle": 1412565953,
+        "irq": 140140
+      },
+      {
+        "model": "Intel(R) Core(TM) i9-9900KF CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 43386734,
+        "nice": 0,
+        "sys": 9297500,
+        "idle": 1393722125,
+        "irq": 403015
+      },
+      {
+        "model": "Intel(R) Core(TM) i9-9900KF CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 93645781,
+        "nice": 0,
+        "sys": 2876218,
+        "idle": 1349884359,
+        "irq": 124078
+      },
+      {
+        "model": "Intel(R) Core(TM) i9-9900KF CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 28412031,
+        "nice": 0,
+        "sys": 7727531,
+        "idle": 1410266796,
+        "irq": 401515
+      },
+      {
+        "model": "Intel(R) Core(TM) i9-9900KF CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 37217984,
+        "nice": 0,
+        "sys": 3589359,
+        "idle": 1405599000,
+        "irq": 134031
+      },
+      {
+        "model": "Intel(R) Core(TM) i9-9900KF CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 56479062,
+        "nice": 0,
+        "sys": 5304437,
+        "idle": 1384622843,
+        "irq": 210093
+      },
+      {
+        "model": "Intel(R) Core(TM) i9-9900KF CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 139707890,
+        "nice": 0,
+        "sys": 5838781,
+        "idle": 1300859671,
+        "irq": 160093
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "VirtualBox Host-Only Network",
+        "internal": false,
+        "mac": "0a:00:27:00:00:22",
+        "address": "fe80::1d31:3337:a33e:d732",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 34
+      },
+      {
+        "name": "VirtualBox Host-Only Network",
+        "internal": false,
+        "mac": "0a:00:27:00:00:22",
+        "address": "192.168.56.1",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Ethernet",
+        "internal": false,
+        "mac": "a8:5e:45:2c:f8:1e",
+        "address": "fe80::f4f0:43aa:bbcb:881e",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 15
+      },
+      {
+        "name": "Ethernet",
+        "internal": false,
+        "mac": "a8:5e:45:2c:f8:1e",
+        "address": "192.168.0.105",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "vEthernet (Default Switch)",
+        "internal": false,
+        "mac": "00:15:5d:c6:93:74",
+        "address": "fe80::9d7b:1251:e716:94b3",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 21
+      },
+      {
+        "name": "vEthernet (Default Switch)",
+        "internal": false,
+        "mac": "00:15:5d:c6:93:74",
+        "address": "172.17.152.65",
+        "netmask": "255.255.255.240",
+        "family": "IPv4"
+      },
+      {
+        "name": "vEthernet (WSL)",
+        "internal": false,
+        "mac": "00:15:5d:fc:39:00",
+        "address": "fe80::e069:2eef:72b9:9bc8",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 43
+      },
+      {
+        "name": "vEthernet (WSL)",
+        "internal": false,
+        "mac": "00:15:5d:fc:39:00",
+        "address": "172.18.0.113",
+        "netmask": "255.255.255.240",
+        "family": "IPv4"
+      }
+    ],
+    "host": "DESKTOP-5E15POE"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff7e55e19f9",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+10873"
+    },
+    {
+      "pc": "0x00007ff7e55e5e1c",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+28316"
+    },
+    {
+      "pc": "0x00007ff7e55e4dd8",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+24152"
+    },
+    {
+      "pc": "0x00007ff7e56e34cb",
+      "symbol": "v8::base::CPU::has_sse+38363"
+    },
+    {
+      "pc": "0x00007ff7e5ef9f4e",
+      "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
+    },
+    {
+      "pc": "0x00007ff7e5ee2021",
+      "symbol": "v8::SharedArrayBuffer::Externalize+833"
+    },
+    {
+      "pc": "0x00007ff7e5dae57c",
+      "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
+    },
+    {
+      "pc": "0x00007ff7e5db97d0",
+      "symbol": "v8::internal::Heap::ProtectUnprotectedMemoryChunks+1312"
+    },
+    {
+      "pc": "0x00007ff7e5db62f4",
+      "symbol": "v8::internal::Heap::PageFlagsAreConsistent+3204"
+    },
+    {
+      "pc": "0x00007ff7e5dabb13",
+      "symbol": "v8::internal::Heap::CollectGarbage+1283"
+    },
+    {
+      "pc": "0x00007ff7e5daa184",
+      "symbol": "v8::internal::Heap::AddRetainedMap+2452"
+    },
+    {
+      "pc": "0x00007ff7e5dcb36d",
+      "symbol": "v8::internal::Factory::NewFillerObject+61"
+    },
+    {
+      "pc": "0x00007ff7e5b30adf",
+      "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+1295"
+    },
+    {
+      "pc": "0x00007ff7e6344ddd",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+546637"
+    },
+    {
+      "pc": "0x0000000f7025a1b3",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2153889792,
+    "totalCommittedMemory": 2153889792,
+    "usedMemory": 2143248224,
+    "availableMemory": 48648408,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 32808,
+        "used": 32808,
+        "available": 0
+      },
+      "new_space": {
+        "memorySize": 4194304,
+        "committedMemory": 4194304,
+        "capacity": 2094912,
+        "used": 29624,
+        "available": 2065288
+      },
+      "old_space": {
+        "memorySize": 753811456,
+        "committedMemory": 753811456,
+        "capacity": 750201208,
+        "used": 749638504,
+        "available": 562704
+      },
+      "code_space": {
+        "memorySize": 1740800,
+        "committedMemory": 1740800,
+        "capacity": 1538400,
+        "used": 1538400,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 6033408,
+        "committedMemory": 6033408,
+        "capacity": 5207680,
+        "used": 5207680,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 1387225088,
+        "committedMemory": 1387225088,
+        "capacity": 1386256920,
+        "used": 1386256920,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 622592,
+        "committedMemory": 622592,
+        "capacity": 544288,
+        "used": 544288,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 2094912,
+        "used": 0,
+        "available": 2094912
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 120.921,
+    "kernelCpuSeconds": 8.906,
+    "cpuConsumptionPercent": 27.1605,
+    "maxRss": 2799575040,
+    "pageFaults": {
+      "IORequired": 2010774,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 16204,
+      "writes": 15
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "=C:": "C:\\Users\\Rozadin\\Desktop\\Rails\\cnvg-task",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "APPDATA": "C:\\Users\\Rozadin\\AppData\\Roaming",
+    "BUNDLER_ORIG_BUNDLER_VERSION": "BUNDLER_ENVIRONMENT_PRESERVER_INTENTIONALLY_NIL",
+    "BUNDLER_ORIG_BUNDLE_BIN_PATH": "BUNDLER_ENVIRONMENT_PRESERVER_INTENTIONALLY_NIL",
+    "BUNDLER_ORIG_BUNDLE_GEMFILE": "C:/Users/Rozadin/Desktop/Rails/cnvg-task/Gemfile",
+    "BUNDLER_ORIG_GEM_HOME": "BUNDLER_ENVIRONMENT_PRESERVER_INTENTIONALLY_NIL",
+    "BUNDLER_ORIG_GEM_PATH": "BUNDLER_ENVIRONMENT_PRESERVER_INTENTIONALLY_NIL",
+    "BUNDLER_ORIG_MANPATH": "BUNDLER_ENVIRONMENT_PRESERVER_INTENTIONALLY_NIL",
+    "BUNDLER_ORIG_PATH": "C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Rozadin\\bin;C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files (x86)\\Razer\\ChromaBroadcast\\bin;C:\\Program Files\\Razer\\ChromaBroadcast\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Windows\\System32\\OpenSSH;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\nodejs;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\Yarn\\bin;C:\\Program Files\\dotnet;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Program Files\\Git\\cmd;C:\\Ruby27-x64\\bin;C:\\RailsInstaller\\Ruby2.3.3\\bin;C:\\Users\\Rozadin\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Rozadin\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Rozadin\\AppData\\Roaming\\npm;C:\\Users\\Rozadin\\AppData\\Local\\Yarn\\bin;C:\\Users\\Rozadin\\.dotnet\\tools",
+    "BUNDLER_ORIG_RB_USER_INSTALL": "BUNDLER_ENVIRONMENT_PRESERVER_INTENTIONALLY_NIL",
+    "BUNDLER_ORIG_RUBYLIB": "BUNDLER_ENVIRONMENT_PRESERVER_INTENTIONALLY_NIL",
+    "BUNDLER_ORIG_RUBYOPT": "-Eutf-8",
+    "BUNDLER_VERSION": "2.1.4",
+    "BUNDLE_BIN_PATH": "C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/bundler-2.1.4/exe/bundle",
+    "BUNDLE_GEMFILE": "C:/Users/Rozadin/Desktop/Rails/cnvg-task/Gemfile",
+    "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_28376_PDRZGFVKDRCJQQFH",
+    "COLORTERM": "truecolor",
+    "COMMONPROGRAMFILES": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "DESKTOP-5E15POE",
+    "COMSPEC": "C:\\Windows\\system32\\cmd.exe",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "EXEPATH": "C:\\Program Files\\Git\\bin",
+    "GEM_HOME": "C:/Ruby27-x64/lib/ruby/gems/2.7.0",
+    "GEM_PATH": "C:/Ruby27-x64/lib/ruby/gems/2.7.0;C:/Users/Rozadin/.gem/ruby/2.7.0",
+    "GIT_ASKPASS": "c:\\Users\\Rozadin\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass.sh",
+    "HOME": "C:\\Users\\Rozadin",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\Rozadin",
+    "LANG": "en_US.UTF-8",
+    "LOCALAPPDATA": "C:\\Users\\Rozadin\\AppData\\Local",
+    "LOGONSERVER": "\\\\DESKTOP-5E15POE",
+    "MSYSTEM": "MINGW64",
+    "NODE_ENV": "development",
+    "NUMBER_OF_PROCESSORS": "16",
+    "ORIGINAL_XDG_CURRENT_DESKTOP": "undefined",
+    "OS": "Windows_NT",
+    "OneDrive": "C:\\Users\\Rozadin\\OneDrive",
+    "PATH": "C:/Ruby27-x64/lib/ruby/gems/2.7.0/bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Rozadin\\bin;C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files (x86)\\Razer\\ChromaBroadcast\\bin;C:\\Program Files\\Razer\\ChromaBroadcast\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Windows\\System32\\OpenSSH;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\nodejs;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\Yarn\\bin;C:\\Program Files\\dotnet;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Program Files\\Git\\cmd;C:\\Ruby27-x64\\bin;C:\\RailsInstaller\\Ruby2.3.3\\bin;C:\\Users\\Rozadin\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Rozadin\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Rozadin\\AppData\\Roaming\\npm;C:\\Users\\Rozadin\\AppData\\Local\\Yarn\\bin;C:\\Users\\Rozadin\\.dotnet\\tools",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC;.RB;.RBW",
+    "PLINK_PROTOCOL": "ssh",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 158 Stepping 12, GenuineIntel",
+    "PROCESSOR_LEVEL": "6",
+    "PROCESSOR_REVISION": "9e0c",
+    "PROGRAMFILES": "C:\\Program Files",
+    "PROMPT": "$P$G",
+    "PS1": "\\[\\033]0;$TITLEPREFIX:$PWD\\007\\]\\n\\[\\033[32m\\]\\u@\\h \\[\\033[35m\\]$MSYSTEM \\[\\033[33m\\]\\w\\[\\033[36m\\]`__git_ps1`\\[\\033[0m\\]\\n$ ",
+    "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules",
+    "PUBLIC": "C:\\Users\\Public",
+    "PWD": "C:/Users/Rozadin/Desktop/Rails/cnvg-task",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "RAILS_ENV": "development",
+    "RUBYLIB": "C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/bundler-2.1.4/lib",
+    "RUBYOPT": "-rC:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/bundler-2.1.4/lib/bundler/setup -Eutf-8",
+    "SESSIONNAME": "Console",
+    "SHLVL": "1",
+    "SYSTEMDRIVE": "C:",
+    "SYSTEMROOT": "C:\\Windows",
+    "TEMP": "C:\\Users\\Rozadin\\AppData\\Local\\Temp",
+    "TERM": "xterm-256color",
+    "TERM_PROGRAM": "vscode",
+    "TERM_PROGRAM_VERSION": "1.51.1",
+    "TMP": "C:\\Users\\Rozadin\\AppData\\Local\\Temp",
+    "USER": "Rozadin",
+    "USERDOMAIN": "DESKTOP-5E15POE",
+    "USERDOMAIN_ROAMINGPROFILE": "DESKTOP-5E15POE",
+    "USERNAME": "Rozadin",
+    "USERPROFILE": "C:\\Users\\Rozadin",
+    "VBOX_MSI_INSTALL_PATH": "C:\\Program Files\\Oracle\\VirtualBox\\",
+    "VSCODE_GIT_ASKPASS_MAIN": "c:\\Users\\Rozadin\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass-main.js",
+    "VSCODE_GIT_ASKPASS_NODE": "C:\\Users\\Rozadin\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+    "VSCODE_GIT_IPC_HANDLE": "\\\\.\\pipe\\vscode-git-75dffb115f-sock",
+    "WEBPACK_DEV_SERVER": "true",
+    "WINDIR": "C:\\Windows",
+    "_": "./bin/webpack-dev-server"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Windows\\SYSTEM32\\ntdll.dll",
+    "C:\\Windows\\System32\\KERNEL32.DLL",
+    "C:\\Windows\\System32\\KERNELBASE.dll",
+    "C:\\Windows\\System32\\WS2_32.dll",
+    "C:\\Windows\\System32\\RPCRT4.dll",
+    "C:\\Windows\\SYSTEM32\\dbghelp.dll",
+    "C:\\Windows\\System32\\PSAPI.DLL",
+    "C:\\Windows\\System32\\ucrtbase.dll",
+    "C:\\Windows\\System32\\ADVAPI32.dll",
+    "C:\\Windows\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\Windows\\System32\\msvcrt.dll",
+    "C:\\Windows\\SYSTEM32\\USERENV.dll",
+    "C:\\Windows\\System32\\sechost.dll",
+    "C:\\Windows\\System32\\profapi.dll",
+    "C:\\Windows\\System32\\USER32.dll",
+    "C:\\Windows\\System32\\win32u.dll",
+    "C:\\Windows\\System32\\GDI32.dll",
+    "C:\\Windows\\System32\\gdi32full.dll",
+    "C:\\Windows\\System32\\msvcp_win.dll",
+    "C:\\Windows\\System32\\CRYPT32.dll",
+    "C:\\Windows\\System32\\MSASN1.dll",
+    "C:\\Windows\\System32\\bcrypt.dll",
+    "C:\\Windows\\SYSTEM32\\WINMM.dll",
+    "C:\\Windows\\SYSTEM32\\WINMMBASE.dll",
+    "C:\\Windows\\System32\\cfgmgr32.dll",
+    "C:\\Windows\\System32\\bcryptPrimitives.dll",
+    "C:\\Windows\\System32\\IMM32.DLL",
+    "C:\\Windows\\System32\\powrprof.dll",
+    "C:\\Windows\\System32\\UMPDC.dll",
+    "C:\\Windows\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\Windows\\system32\\uxtheme.dll",
+    "C:\\Windows\\System32\\combase.dll",
+    "C:\\Windows\\system32\\mswsock.dll",
+    "C:\\Windows\\System32\\kernel.appcore.dll",
+    "C:\\Windows\\System32\\NSI.dll",
+    "C:\\Windows\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\Windows\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\Windows\\SYSTEM32\\DNSAPI.dll",
+    "C:\\Windows\\system32\\napinsp.dll",
+    "C:\\Windows\\system32\\pnrpnsp.dll",
+    "C:\\Windows\\System32\\winrnr.dll",
+    "C:\\Windows\\system32\\NLAapi.dll",
+    "C:\\Windows\\system32\\wshbth.dll",
+    "C:\\Windows\\System32\\rasadhlp.dll",
+    "C:\\Windows\\System32\\fwpuclnt.dll",
+    "\\\\?\\C:\\Users\\Rozadin\\Desktop\\Rails\\cnvg-task\\node_modules\\node-sass\\vendor\\win32-x64-72\\binding.node"
+  ]
+}

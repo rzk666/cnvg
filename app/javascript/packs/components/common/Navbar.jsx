@@ -2,7 +2,7 @@ import React from 'react';
 // Routing
 import { Link, useHistory } from 'react-router-dom';
 // Universal
-import { CARS, DRIVERS, HOME } from '../../universal/pages';
+import { CARS, DRIVERS, HOME, CARS_AND_DRIVERS } from '../../universal/pages';
 // Components
 import {
   AppBar,
@@ -52,7 +52,7 @@ const Navbar = () => {
         </NavbarLink>
         <NavbarLink
           to={`/${DRIVERS}`}
-          isActive={pathname.includes(DRIVERS)}
+          isActive={pathname.includes(CARS_AND_DRIVERS)}
         >
           Drivers & Cars
         </NavbarLink>

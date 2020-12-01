@@ -3,15 +3,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 // Components
 import CarsTable from './cars/CarsTable';
+import DriversTable from './drivers/DriversTable';
 import { AddCircle } from '@material-ui/icons';
 import { Tooltip } from '@material-ui/core';
 // Utils
 import { useHistory } from 'react-router-dom';
 // Styles
 import styles from './MainList.module.scss';
-
-// Temp
-const DriversTable = () => <div />;
 
 const MainList = ({ entity, data }) => {
   const history = useHistory();

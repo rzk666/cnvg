@@ -116,7 +116,7 @@ const AddNewCar = ({ onSubmit }) => {
                   {COLORS.map((color) => (
                     <MenuItem key={color} value={color}>
                       <div className={styles.color_menu_item}>
-                        <ColoredDot color={color} />
+                        <ColoredDot height="15px" width="15px" color={color} />
                         {color}
                       </div>
                     </MenuItem>
@@ -169,6 +169,7 @@ const AddNewCar = ({ onSubmit }) => {
                 <label htmlFor="image">
                   <Button
                     component="span"
+                    className={styles.form_btn}
                   >
                     <>
                       <Photo style={{ marginRight: '10px' }} />
@@ -178,10 +179,10 @@ const AddNewCar = ({ onSubmit }) => {
                 </label>
                 <Button
                   disabled={hasErrors || isSubmitting}
-                  className={styles.submit_btn}
+                  className={styles.form_btn}
                   onClick={handleSubmit}
                 >
-                  { isSubmitting ? <CircularProgress /> : 'Add Car'}
+                  { isSubmitting ? <CircularProgress color="white" style={{ height: '25px', width: '25px' }} /> : 'Add Car'}
                 </Button>
               </div>
             </div>

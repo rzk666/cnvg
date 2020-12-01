@@ -14,8 +14,11 @@ import {
 // Page Components
 import HomeIndex from './pages/HomeIndex';
 import BlogIndex from './pages/BlogIndex';
+// Cars related pages
 import CarsIndex from './pages/CarsIndex';
 import CreateCarIndex from './pages/CreateCarIndex';
+import CarIndex from './pages/CarIndex';
+// Driver related pages
 import DriversIndex from './pages/DriversIndex';
 // import CarsAndDriversIndex from './pages/CarsAndDriversIndex';
 
@@ -25,11 +28,11 @@ const App = () => (
       <Route path={HOME} exact render={(props) => (<HomeIndex {...props} />)} />
       <Route path={`/${BLOG}`} exact render={(props) => (<BlogIndex {...props} />)} />
       <Route path={`/${CARS}`} exact render={(props) => (<CarsIndex {...props} />)} />
-      <Switch>
-        <Route path={`/${CREATE_CAR}`} exact render={(props) => (<CreateCarIndex {...props} />)} />
-        {/* <Route path={`/${CARS}/:id`} exact render={(props) => (<CarIndex {...props} />)} /> */}
-      </Switch>
+      <Route path={`/${CREATE_CAR}`} exact render={(props) => (<CreateCarIndex {...props} />)} />
+      <Route path={`/${CARS}/:id`} exact render={(props) => (<CarIndex {...props} />)} />
       <Route path={`/${DRIVERS}`} exact render={(props) => (<DriversIndex {...props} />)} />
+      {/* <Route path={`/${CREATE_DRIVER}`} exact render={(props) => (<CreateDriverIndex {...props} />)} />
+      <Route path={`/${DRIVERS}/:id`} exact render={(props) => (<DriverIndex {...props} />)} /> */}
       {/* <Route path={`/${CARS_AND_DRIVERS}`} exact render={(props) => (<CarsAndDriversIndex {...props} />)} /> */}
     </Switch>
   </Router>
