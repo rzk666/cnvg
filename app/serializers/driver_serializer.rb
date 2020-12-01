@@ -1,6 +1,6 @@
 class DriverSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :id, :name, :email, :dateOfBirth, :updated_at
+  attributes :id, :name, :email, :dateOfBirth
 
   has_many :cars
 end

@@ -2,8 +2,6 @@ module Api
   module V1
     class ArticlesController < ApplicationController
       def index
-        test = Carsanddriver.all
-        puts test[0]
         articles = Article.all
 
         render json: ArticleSerializer.new(articles).serialized_json
