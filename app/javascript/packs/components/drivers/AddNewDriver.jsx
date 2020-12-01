@@ -23,11 +23,21 @@ import styles from './AddNewDriver.module.scss';
 
 // ----- Consts & Dicts ----- //
 const CARS = [{ id: 1, name: 'Car One' }, { id: 2, name: 'Car Two' }];
+const ITEM_HEIGHT = 30;
+const ITEM_PADDING_TOP = 8;
+const CarsMenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 100,
+    },
+  },
+};
 
 const initialValues = {
   name: '',
   email: '',
-  dateOfBirth: '',
+  dateOfBirth: '2000-01-01',
   cars: [],
   image: '',
 };
@@ -92,14 +102,14 @@ const AddNewDriver = ({ onSubmit }) => {
               <TextField
                 name="dateOfBirth"
                 type="date"
-                error={errors.dateOfBirth && touched.dateOfBirth}
                 value={values.dateOfBirth}
-                placeholder={errors.dateOfBirth && touched.dateOfBirth ? errors.dateOfBirth : 'Enter date of birth'}
+                className={styles.dateOfBirth_input}
+                placeholder="Enter date of birth"
                 label="Date of Birth"
                 onBlur={handleBlur}
                 onChange={handleChange}
               />
-              <FormControl style={{ margin: '12px 0' }}>
+              <FormControl style={{ margin: '6px 0' }}>
                 <InputLabel>Cars</InputLabel>
                 <Select
                   name="cars"
@@ -110,6 +120,7 @@ const AddNewDriver = ({ onSubmit }) => {
                   placeholder="Select cars"
                   onBlur={handleBlur}
                   onChange={handleChange}
+                  MenuProps={CarsMenuProps}
                 >
                   {CARS.map((driver) => {
                     const { id, name } = driver;
