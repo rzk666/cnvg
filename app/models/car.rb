@@ -1,3 +1,4 @@
 class Car < ApplicationRecord
-    has_and_belongs_to_many :drivers
+    has_many :carsanddrivers
+    has_many :drivers, :through => :carsanddrivers
 end

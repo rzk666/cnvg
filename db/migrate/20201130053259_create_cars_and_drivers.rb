@@ -1,4 +1,4 @@
-class CreateCarsAndDriversJoinTable < ActiveRecord::Migration[6.0]
+class CreateCarsAndDrivers < ActiveRecord::Migration[6.0]
   def change
     create_table :cars do |t|
       t.string :title
@@ -16,11 +16,10 @@ class CreateCarsAndDriversJoinTable < ActiveRecord::Migration[6.0]
       t.timestamps
     end
 
-    create_join_table :cars, :drivers do |t|
-      t.index :car_id
-      t.index :driver_id
-
-      t.timestamps
+    create_table :carsanddrivers do |t|
+      t.references :driver, index: true, foreign_key: true
+      t.references :car, index: true, foreign_key: true
+      t.timestamps null: false
     end
 
   end
