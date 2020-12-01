@@ -78,12 +78,12 @@ const AddNewDriver = ({ onSubmit }) => {
           isSubmitting,
           setFieldValue,
         }) => {
-          console.log(values.dateOfBirth);
           const hasErrors = !!Object.keys(errors).length;
           return (
             <div className={styles.form_container}>
               <TextField
                 name="name"
+                className={styles.name_input}
                 error={errors.name && touched.name}
                 value={values.name}
                 placeholder={errors.name && touched.name ? errors.name : 'Enter name'}
@@ -110,13 +110,12 @@ const AddNewDriver = ({ onSubmit }) => {
                 onBlur={handleBlur}
                 onChange={handleChange}
               />
-              <FormControl style={{ margin: '6px 0' }}>
+              <FormControl>
                 <InputLabel>Cars</InputLabel>
                 <Select
                   name="cars"
                   multiple
                   input={<Input />}
-                  className={styles.cars_select}
                   value={values.cars}
                   placeholder="Select cars"
                   onBlur={handleBlur}
@@ -158,10 +157,10 @@ const AddNewDriver = ({ onSubmit }) => {
                     component="span"
                     className={styles.form_btn}
                   >
-                    <>
+                    <div className={styles.btn_content_container}>
                       <Photo style={{ marginRight: '10px' }} />
-                      Upload Image
-                    </>
+                      <p>Upload Image</p>
+                    </div>
                   </Button>
                 </label>
                 <Button

@@ -171,10 +171,10 @@ const AddNewCar = ({ onSubmit }) => {
                     component="span"
                     className={styles.form_btn}
                   >
-                    <>
+                    <div className={styles.btn_content_wrapper}>
                       <Photo style={{ marginRight: '10px' }} />
-                      Upload Image
-                    </>
+                      <p>Upload Image</p>
+                    </div>
                   </Button>
                 </label>
                 <Button

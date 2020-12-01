@@ -29,7 +29,7 @@ export const NEW_ARTICLE_VALIDATOR = {
 // New Car Validator
 export const NEW_CAR_VALIDATOR = {
   title: (title) => validateRequired(title),
-  type: () => false,
+  model: () => false,
   color: () => false,
   drivers: () => false,
   image: () => false,
