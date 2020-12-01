@@ -41,9 +41,9 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(id, title, type, color, image) {
+function createData(id, title, model, color, image) {
   return {
-    id, title, type, color, image,
+    id, title, model, color, image,
   };
 }
 
@@ -79,7 +79,7 @@ const CarsTable = () => {
           <TableBody>
             {rows.map((row) => {
               const {
-                id, title, type, color, image,
+                id, title, model, color, image,
               } = row;
               return (
                 <TableRow
@@ -87,12 +87,12 @@ const CarsTable = () => {
                   onClick={() => history.push(`${pathname}/${id}`)}
                 >
                   <TableCell className={classes.cell}>{title}</TableCell>
-                  <TableCell className={classes.cell}>{type || 'unknown'}</TableCell>
+                  <TableCell className={classes.cell}>{model || 'unknown'}</TableCell>
                   <TableCell>{color ? <ColoredDot color={color} /> : 'unknown'}</TableCell>
                   <TableCell align="center">
                     <img
                       src={image}
-                      alt={`${title}_${type}_img`}
+                      alt={`${title}_${model}_img`}
                       className={classes.img}
                     />
                   </TableCell>

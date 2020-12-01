@@ -78,6 +78,7 @@ const AddNewDriver = ({ onSubmit }) => {
           isSubmitting,
           setFieldValue,
         }) => {
+          console.log(values.dateOfBirth);
           const hasErrors = !!Object.keys(errors).length;
           return (
             <div className={styles.form_container}>

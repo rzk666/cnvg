@@ -38,7 +38,7 @@ const ColorMenuProps = {
 
 const initialValues = {
   title: '',
-  type: '',
+  model: '',
   color: '',
   drivers: [],
   image: '',
@@ -93,11 +93,11 @@ const AddNewCar = ({ onSubmit }) => {
                 onChange={handleChange}
               />
               <TextField
-                name="type"
+                name="model"
                 className={styles.type_input}
-                value={values.type}
-                placeholder="Enter type"
-                label="Type"
+                value={values.model}
+                placeholder="Enter model"
+                label="Model"
                 onBlur={handleBlur}
                 onChange={handleChange}
               />

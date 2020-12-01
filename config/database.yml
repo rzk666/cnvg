@@ -13,6 +13,8 @@ development:
 test:
   <<: *default
   database: flatiron_mod3_test
+  username: postgres
+  password: password
 
 production:
   <<: *default
