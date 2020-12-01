@@ -25,8 +25,8 @@ const useStyles = makeStyles({
     maxHeight: 700,
   },
   img: {
-    width: '100px',
-    height: '100px',
+    width: '85px',
+    height: '85px',
     borderRadius: '256px',
   },
   icon: {
@@ -34,6 +34,7 @@ const useStyles = makeStyles({
     height: '100px',
   },
   row: {
+    padding: '5px 0',
     height: 120,
     opacity: 0.6,
     transition: 'opacity 0.3s ease-in',
@@ -78,9 +79,9 @@ const DriversTable = () => {
         <Table stickyHeader className={classes.table}>
           <TableHead>
             <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell>Date of Birth</TableCell>
+              <TableCell align="center">Name</TableCell>
+              <TableCell align="center">Email</TableCell>
+              <TableCell align="center">Date of Birth</TableCell>
               <TableCell align="center">Image</TableCell>
             </TableRow>
           </TableHead>
@@ -94,9 +95,9 @@ const DriversTable = () => {
                   className={classes.row}
                   onClick={() => history.push({ pathname: `/${DRIVERS}/${id}` })}
                 >
-                  <TableCell className={classes.cell}>{name}</TableCell>
-                  <TableCell className={classes.cell}>{email}</TableCell>
-                  <TableCell className={classes.cell}>{dateOfBirth || 'unknown'}</TableCell>
+                  <TableCell align="center" className={classes.cell}>{name}</TableCell>
+                  <TableCell align="center" className={classes.cell}>{email}</TableCell>
+                  <TableCell align="center" className={classes.cell}>{dateOfBirth || 'unknown'}</TableCell>
                   <TableCell align="center">
                     { image
                       ? (

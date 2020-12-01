@@ -12,6 +12,8 @@ import {
 import ColoredDot from '../common/misc/ColoredDot';
 // Universal
 import { CARS } from '../../universal/pages';
+// Images
+import CarAvatar from 'images/CarAvatar.jpg';
 // Utils
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
@@ -25,11 +27,12 @@ const useStyles = makeStyles({
     maxHeight: 700,
   },
   img: {
-    width: '100px',
-    height: '100px',
+    width: '85px',
+    height: '85px',
     borderRadius: '256px',
   },
   row: {
+    padding: '5px 0',
     height: 120,
     opacity: 0.6,
     transition: 'opacity 0.3s ease-in',
@@ -41,6 +44,12 @@ const useStyles = makeStyles({
   cell: {
     fontSize: 18,
   },
+  dot_container: {
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
 
 function createData(id, title, model, color, image) {
@@ -50,15 +59,15 @@ function createData(id, title, model, color, image) {
 }
 
 const rows = [
-  createData(1, 'Ferrari', 'Spider', 'yellow', 'https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/audi-a1-2820a.jpg'),
-  createData(2, 'Mazda', '3', 'blue', 'https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/audi-a1-2820a.jpg'),
-  createData(3, 'Audi', 'A8', 'red', 'https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/audi-a1-2820a.jpg'),
-  createData(4, 'Reno', 'Megan', 'yellow', 'https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/audi-a1-2820a.jpg'),
-  createData(5, 'Honda', 'Accord', 'blue', 'https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/audi-a1-2820a.jpg'),
-  createData(5, 'Honda', 'Accord', 'blue', 'https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/audi-a1-2820a.jpg'),
-  createData(5, 'Honda', 'Accord', 'blue', 'https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/audi-a1-2820a.jpg'),
-  createData(5, 'Honda', 'Accord', 'blue', 'https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/audi-a1-2820a.jpg'),
-  createData(5, 'Honda', 'Accord', 'blue', 'https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/audi-a1-2820a.jpg'),
+  createData(1, 'Ferrari', 'Spider', 'yellow', ''),
+  createData(2, 'Mazda', '3', 'blue', ''),
+  createData(3, 'Audi', 'A8', 'red', ''),
+  createData(4, 'Reno', 'Megan', 'yellow', ''),
+  createData(5, 'Honda', 'Accord', 'blue', ''),
+  createData(5, 'Honda', 'Accord', 'blue', ''),
+  createData(5, 'Honda', 'Accord', 'blue', ''),
+  createData(5, 'Honda', 'Accord', 'blue', ''),
+  createData(5, 'Honda', 'Accord', 'blue', ''),
 ];
 
 const CarsTable = () => {
@@ -70,9 +79,9 @@ const CarsTable = () => {
         <Table stickyHeader className={classes.table}>
           <TableHead>
             <TableRow>
-              <TableCell>Vendor</TableCell>
-              <TableCell>Model</TableCell>
-              <TableCell>Color</TableCell>
+              <TableCell align="center">Vendor</TableCell>
+              <TableCell align="center">Model</TableCell>
+              <TableCell align="center">Color</TableCell>
               <TableCell align="center">Image</TableCell>
             </TableRow>
           </TableHead>
@@ -86,12 +95,19 @@ const CarsTable = () => {
                   className={classes.row}
                   onClick={() => history.push(`/${CARS}/${id}`)}
                 >
-                  <TableCell className={classes.cell}>{title}</TableCell>
-                  <TableCell className={classes.cell}>{model || 'unknown'}</TableCell>
-                  <TableCell className={classes.cell}>{color ? <ColoredDot color={color} /> : 'unknown'}</TableCell>
+                  <TableCell align="center" className={classes.cell}>{title}</TableCell>
+                  <TableCell align="center" className={classes.cell}>{model || 'unknown'}</TableCell>
+                  <TableCell align="center" className={classes.cell}>
+                    {color
+                      ? (
+                        <div className={classes.dot_container}>
+                          <ColoredDot color={color} />
+                        </div>
+                      ) : 'unknown'}
+                  </TableCell>
                   <TableCell align="center">
                     <img
-                      src={image}
+                      src={image || CarAvatar}
                       alt={`${title}_${model}_img`}
                       className={classes.img}
                     />

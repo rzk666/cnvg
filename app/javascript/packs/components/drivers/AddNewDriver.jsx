@@ -81,36 +81,42 @@ const AddNewDriver = ({ onSubmit }) => {
           const hasErrors = !!Object.keys(errors).length;
           return (
             <div className={styles.form_container}>
-              <TextField
-                name="name"
-                className={styles.name_input}
-                error={errors.name && touched.name}
-                value={values.name}
-                placeholder={errors.name && touched.name ? errors.name : 'Enter name'}
-                label="Name"
-                onBlur={handleBlur}
-                onChange={handleChange}
-              />
-              <TextField
-                name="email"
-                error={errors.email && touched.email}
-                value={values.email}
-                placeholder={errors.email && touched.email ? errors.email : 'Enter email'}
-                label="Email"
-                onBlur={handleBlur}
-                onChange={handleChange}
-              />
-              <TextField
-                name="dateOfBirth"
-                type="date"
-                value={values.dateOfBirth}
-                className={styles.dateOfBirth_input}
-                placeholder="Enter date of birth"
-                label="Date of Birth"
-                onBlur={handleBlur}
-                onChange={handleChange}
-              />
-              <FormControl>
+              <FormControl style={{ margin: '12px 0' }}>
+                <TextField
+                  name="name"
+                  className={styles.name_input}
+                  error={errors.name && touched.name}
+                  value={values.name}
+                  placeholder={errors.name && touched.name ? errors.name : 'Enter name'}
+                  label="Name"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                />
+              </FormControl>
+              <FormControl style={{ margin: '12px 0' }}>
+                <TextField
+                  name="email"
+                  error={errors.email && touched.email}
+                  value={values.email}
+                  placeholder={errors.email && touched.email ? errors.email : 'Enter email'}
+                  label="Email"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                />
+              </FormControl>
+              <FormControl style={{ margin: '12px 0' }}>
+                <TextField
+                  name="dateOfBirth"
+                  type="date"
+                  value={values.dateOfBirth}
+                  className={styles.dateOfBirth_input}
+                  placeholder="Enter date of birth"
+                  label="Date of Birth"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                />
+              </FormControl>
+              <FormControl style={{ margin: '12px 0' }}>
                 <InputLabel>Cars</InputLabel>
                 <Select
                   name="cars"
@@ -152,12 +158,14 @@ const AddNewDriver = ({ onSubmit }) => {
                     }
                   }}
                 />
-                <label htmlFor="image">
+                <label
+                  className={styles.form_btn}
+                  htmlFor="image"
+                >
                   <Button
                     component="span"
-                    className={styles.form_btn}
                   >
-                    <div className={styles.btn_content_container}>
+                    <div className={styles.btn_content_wrapper}>
                       <Photo style={{ marginRight: '10px' }} />
                       <p>Upload Image</p>
                     </div>

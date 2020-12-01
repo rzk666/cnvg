@@ -82,25 +82,28 @@ const AddNewCar = ({ onSubmit }) => {
           const hasErrors = !!Object.keys(errors).length;
           return (
             <div className={styles.form_container}>
-              <TextField
-                name="title"
-                error={errors.title && touched.title}
-                className={styles.title_input}
-                value={values.title}
-                placeholder={errors.title && touched.title ? errors.title : 'Enter title'}
-                label="Title"
-                onBlur={handleBlur}
-                onChange={handleChange}
-              />
-              <TextField
-                name="model"
-                className={styles.type_input}
-                value={values.model}
-                placeholder="Enter model"
-                label="Model"
-                onBlur={handleBlur}
-                onChange={handleChange}
-              />
+              <FormControl style={{ margin: '12px 0' }}>
+                <TextField
+                  name="title"
+                  error={errors.title && touched.title}
+                  className={styles.title_input}
+                  value={values.title}
+                  placeholder={errors.title && touched.title ? errors.title : 'Enter title'}
+                  label="Title"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                />
+              </FormControl>
+              <FormControl style={{ margin: '12px 0' }}>
+                <TextField
+                  name="model"
+                  value={values.model}
+                  placeholder="Enter model"
+                  label="Model"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                />
+              </FormControl>
               <FormControl style={{ margin: '12px 0' }}>
                 <InputLabel>Color</InputLabel>
                 <Select
@@ -166,10 +169,12 @@ const AddNewCar = ({ onSubmit }) => {
                     }
                   }}
                 />
-                <label htmlFor="image">
+                <label
+                  className={styles.form_btn}
+                  htmlFor="image"
+                >
                   <Button
                     component="span"
-                    className={styles.form_btn}
                   >
                     <div className={styles.btn_content_wrapper}>
                       <Photo style={{ marginRight: '10px' }} />

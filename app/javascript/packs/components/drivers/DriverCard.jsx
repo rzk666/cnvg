@@ -4,7 +4,7 @@ import {
   Paper,
 } from '@material-ui/core';
 // Images
-import CarAvatar from 'images/CarAvatar.jpg';
+import { AccountCircle } from '@material-ui/icons';
 // Utils
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -44,31 +44,33 @@ const useStyles = makeStyles({
 });
 
 // TEMP
-const CAR = {
-  title: 'Ferarri',
-  model: 'Spider',
-  color: 'yellow',
+const DRIVER = {
+  name: 'Razi Elbaz',
+  email: 'raziprojects@gmail.com',
+  dateOfBirth: '2000-01-01',
   image: '',
-
 };
 
-const CarCard = ({ onSubmit }) => {
+const DriverCard = ({ onSubmit }) => {
   const classes = useStyles();
   return (
     <Paper className={classes.container}>
       <div className={classes.avatar_container}>
-        <img
-          className={classes.avatar}
-          src={CAR.image || CarAvatar}
-          alt="car"
-        />
+        { DRIVER.image ? (
+          <img
+            className={classes.avatar}
+            src={DRIVER.image}
+            alt="car"
+          />
+        ) : <AccountCircle className={classes.avatar} /> }
       </div>
       <div className={classes.details_container}>
-        <h1 style={{ margin: 0 }}>{`${CAR.title} ${CAR.model}`}</h1>
-        <p style={{ margin: 0 }}>{CAR.color}</p>
+        <h1 style={{ margin: 0 }}>{DRIVER.name}</h1>
+        <p style={{ margin: 0 }}>{DRIVER.email}</p>
+        <p style={{ margin: 0 }}>{DRIVER.dateOfBirth}</p>
       </div>
     </Paper>
   );
 };
 
-export default CarCard;
+export default DriverCard;
