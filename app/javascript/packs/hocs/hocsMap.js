@@ -8,7 +8,7 @@ const HOCS_MAP = {
   carscreate: [withLayout],
   driverscreate: [withLayout],
   drivers: [withLayout],
-  driversandcars: [withLayout],
+  carsanddrivers: [withLayout],
 };
 
 export default HOCS_MAP;

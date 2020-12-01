@@ -25,7 +25,7 @@ import DriversIndex from './pages/DriversIndex';
 import CreateDriverIndex from './pages/CreateDriverIndex';
 import DriverIndex from './pages/DriverIndex';
 // General pages
-// import CarsAndDriversIndex from './pages/CarsAndDriversIndex';
+import CarsAndDriversIndex from './pages/CarsAndDriversIndex';
 
 const App = () => (
   <Router>
@@ -38,7 +38,7 @@ const App = () => (
       <Route path={`/${DRIVERS}`} exact render={(props) => (<DriversIndex {...props} />)} />
       <Route path={`/${CREATE_DRIVER}`} exact render={(props) => (<CreateDriverIndex {...props} />)} />
       <Route path={`/${DRIVERS}/:id`} exact render={(props) => (<DriverIndex {...props} />)} />
-      {/* <Route path={`/${CARS_AND_DRIVERS}`} exact render={(props) => (<CarsAndDriversIndex {...props} />)} /> */}
+      <Route path={`/${CARS_AND_DRIVERS}`} exact render={(props) => (<CarsAndDriversIndex {...props} />)} />
     </Switch>
   </Router>
 );

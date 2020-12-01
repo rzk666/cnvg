@@ -2,11 +2,16 @@ import React from 'react';
 // Utils
 import page from '../hocs/page';
 // Universal
-import { BLOG } from '../universal/pages';
+import { CARS_AND_DRIVERS } from '../universal/pages';
 // Components
-import BlogController from '../controllers/BlogController';
-import BlogView from '../views/BlogView';
+import CarsAndDriversController from '../controllers/CarsAndDriversController';
+import CarsAndDriversView from '../views/CarsAndDriversView';
 
-const Blog = (props) => <BlogController {...props} View={BlogView} />;
+const CarsAndDrivers = (props) => (
+  <CarsAndDriversController
+    {...props}
+    View={CarsAndDriversView}
+  />
+);
 
-export default (page(Blog, BLOG));
+export default (page(CarsAndDrivers, CARS_AND_DRIVERS));
