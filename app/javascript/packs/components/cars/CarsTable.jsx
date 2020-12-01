@@ -10,6 +10,8 @@ import {
   TableRow,
 } from '@material-ui/core';
 import ColoredDot from '../common/misc/ColoredDot';
+// Universal
+import { CARS } from '../../universal/pages';
 // Utils
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
@@ -62,8 +64,6 @@ const rows = [
 const CarsTable = () => {
   const classes = useStyles();
   const history = useHistory();
-  const { location } = history;
-  const { pathname } = location;
   return (
     <Paper className={classes.wrapper}>
       <TableContainer className={classes.container}>
@@ -84,11 +84,11 @@ const CarsTable = () => {
               return (
                 <TableRow
                   className={classes.row}
-                  onClick={() => history.push(`${pathname}/${id}`)}
+                  onClick={() => history.push(`${CARS}/${id}`)}
                 >
                   <TableCell className={classes.cell}>{title}</TableCell>
                   <TableCell className={classes.cell}>{model || 'unknown'}</TableCell>
-                  <TableCell>{color ? <ColoredDot color={color} /> : 'unknown'}</TableCell>
+                  <TableCell className={classes.cell}>{color ? <ColoredDot color={color} /> : 'unknown'}</TableCell>
                   <TableCell align="center">
                     <img
                       src={image}

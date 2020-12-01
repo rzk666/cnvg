@@ -51,7 +51,7 @@ const Navbar = () => {
           Drivers
         </NavbarLink>
         <NavbarLink
-          to={`/${DRIVERS}`}
+          to={`/${CARS_AND_DRIVERS}`}
           isActive={pathname.includes(CARS_AND_DRIVERS)}
         >
           Drivers & Cars

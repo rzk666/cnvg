@@ -10,6 +10,8 @@ import {
   TableRow,
 } from '@material-ui/core';
 import { AccountCircle } from '@material-ui/icons';
+// Universal
+import { DRIVERS } from '../../universal/pages';
 // Utils
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
@@ -70,8 +72,6 @@ const rows = [
 const DriversTable = () => {
   const classes = useStyles();
   const history = useHistory();
-  const { location } = history;
-  const { pathname } = location;
   return (
     <Paper className={classes.wrapper}>
       <TableContainer className={classes.container}>
@@ -92,11 +92,11 @@ const DriversTable = () => {
               return (
                 <TableRow
                   className={classes.row}
-                  onClick={() => history.push(`${pathname}/${id}`)}
+                  onClick={() => history.push(`${DRIVERS}/${id}`)}
                 >
                   <TableCell className={classes.cell}>{name}</TableCell>
                   <TableCell className={classes.cell}>{email}</TableCell>
-                  <TableCell>{dateOfBirth || 'unknown'}</TableCell>
+                  <TableCell className={classes.cell}>{dateOfBirth || 'unknown'}</TableCell>
                   <TableCell align="center">
                     { image
                       ? (
