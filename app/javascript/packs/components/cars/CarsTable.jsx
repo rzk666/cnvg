@@ -84,7 +84,7 @@ const CarsTable = () => {
               return (
                 <TableRow
                   className={classes.row}
-                  onClick={() => history.push(`${CARS}/${id}`)}
+                  onClick={() => history.push(`/${CARS}/${id}`)}
                 >
                   <TableCell className={classes.cell}>{title}</TableCell>
                   <TableCell className={classes.cell}>{model || 'unknown'}</TableCell>

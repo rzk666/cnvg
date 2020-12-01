@@ -92,7 +92,7 @@ const DriversTable = () => {
               return (
                 <TableRow
                   className={classes.row}
-                  onClick={() => history.push(`${DRIVERS}/${id}`)}
+                  onClick={() => history.push({ pathname: `/${DRIVERS}/${id}` })}
                 >
                   <TableCell className={classes.cell}>{name}</TableCell>
                   <TableCell className={classes.cell}>{email}</TableCell>
