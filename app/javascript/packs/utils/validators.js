@@ -19,3 +19,12 @@ export const NEW_ARTICLE_VALIDATOR = {
   title: (title) => validateRequired(title),
   text: (text) => validateRequired(text),
 };
+
+// New Car Validator
+export const NEW_CAR_VALIDATOR = {
+  title: (title) => validateRequired(title),
+  type: () => false,
+  color: () => false,
+  drivers: () => false,
+  image: () => false,
+};

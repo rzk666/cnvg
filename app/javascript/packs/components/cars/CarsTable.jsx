@@ -9,6 +9,7 @@ import {
   TableHead,
   TableRow,
 } from '@material-ui/core';
+import ColoredDot from '../common/misc/ColoredDot';
 // Utils
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
@@ -38,11 +39,6 @@ const useStyles = makeStyles({
   cell: {
     fontSize: 18,
   },
-  dot: {
-    height: 25,
-    width: 25,
-    borderRadius: '256px',
-  },
 });
 
 function createData(id, title, type, color, image) {
@@ -62,17 +58,6 @@ const rows = [
   createData(5, 'Honda', 'Accord', 'blue', 'https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/audi-a1-2820a.jpg'),
   createData(5, 'Honda', 'Accord', 'blue', 'https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/audi-a1-2820a.jpg'),
 ];
-
-// ----- Help Components ----- //
-const ColoredDot = ({ color }) => {
-  const classes = useStyles();
-  return (
-    <div
-      style={{ background: color }}
-      className={classes.dot}
-    />
-  );
-};
 
 const CarsTable = () => {
   const classes = useStyles();
@@ -102,8 +87,8 @@ const CarsTable = () => {
                   onClick={() => history.push(`${pathname}/${id}`)}
                 >
                   <TableCell className={classes.cell}>{title}</TableCell>
-                  <TableCell className={classes.cell}>{type}</TableCell>
-                  <TableCell><ColoredDot color={color} /></TableCell>
+                  <TableCell className={classes.cell}>{type || 'unknown'}</TableCell>
+                  <TableCell>{color ? <ColoredDot color={color} /> : 'unknown'}</TableCell>
                   <TableCell align="center">
                     <img
                       src={image}
