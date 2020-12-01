@@ -16,6 +16,7 @@
   // Colors
   --main-solid-blue: #0287C3; 
   --main-solid-black: #202124;
+  --main-background: #424242;
   --main-solid-pink: #CC869D;
   // ----- Global Classes ----- //
   .hover_clickable{
@@ -32,6 +33,7 @@
       position: fixed;
       width: 100vw!important;
       height: 100vh!important;
+      background-color: var(--main-background);
   }
   body,html {
       font-family: Roboto;

@@ -17,33 +17,11 @@ import CarAvatar from 'images/CarAvatar.jpg';
 // Utils
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
+// Styles
+import TABLE_STYLES from '../styles/tables/TableStyles';
 
 const useStyles = makeStyles({
-  wrapper: {
-    width: '100%',
-    height: 700,
-  },
-  container: {
-    maxHeight: 700,
-  },
-  img: {
-    width: '85px',
-    height: '85px',
-    borderRadius: '256px',
-  },
-  row: {
-    padding: '5px 0',
-    height: 120,
-    opacity: 0.6,
-    transition: 'opacity 0.3s ease-in',
-    '&:hover': {
-      cursor: 'pointer',
-      opacity: 1,
-    },
-  },
-  cell: {
-    fontSize: 18,
-  },
+  ...TABLE_STYLES,
   dot_container: {
     width: '100%',
     display: 'flex',

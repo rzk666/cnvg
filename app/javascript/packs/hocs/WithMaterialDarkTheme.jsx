@@ -1,8 +1,6 @@
 import React from 'react';
 // Components
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { Paper } from '@material-ui/core';
-// import { lightBlue } from '@material-ui/core/colors';
 
 const WithMaterialDarkThemeHOC = (ComposedComponent) => {
   const theme = createMuiTheme({
@@ -40,11 +38,9 @@ const WithMaterialDarkThemeHOC = (ComposedComponent) => {
   });
   const WithMaterialDarkTheme = (props) => (
     <ThemeProvider theme={theme}>
-      <Paper>
-        <ComposedComponent
-          {...props}
-        />
-      </Paper>
+      <ComposedComponent
+        {...props}
+      />
     </ThemeProvider>
   );
 

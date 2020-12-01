@@ -1,4 +1,6 @@
 import React from 'react';
+// Animations
+import { AnimatePresence } from 'framer-motion';
 // Router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // Universal

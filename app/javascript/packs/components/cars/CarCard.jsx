@@ -11,7 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // ----- Consts & Dicts ----- //
 const useStyles = makeStyles({
   container: {
-    height: 350,
+    height: 700,
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
