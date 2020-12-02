@@ -3,14 +3,14 @@ module Api
     class CarsController < ApplicationController
       def index
         cars = Car.all
-
-        render json: CarSerializer.new(cars).serialized_json
+        serializer = CarSerializer.new()
+        render json: serializer.serialize_cars(cars: cars)
       end
 
       def show
         car = Car.find_by(id: params[:id])
-
-        render json: CarSerializer.new(car, options).serialized_json
+        serializer = CarSerializer.new()
+        render json: serializer.serialize_car(car: car, options: 'with drivers')
       end
 
       def create
@@ -20,7 +20,8 @@ module Api
 
         if newCar.save
           cars = Car.all
-          render json: CarSerializer.new(cars).serialized_json
+          serializer = CarSerializer.new()
+          render json: serializer.serialize_cars(cars: cars)
         else
           render json: { error: 'Could not save car' }, status: 442
         end
@@ -29,13 +30,8 @@ module Api
       private
 
       def car_params
-        params.permit(:title, :model, :color, :driver_ids)
+        params.permit(:title, :model, :color, :driver_ids, :image)
       end
-
-      def options
-        @options ||= { include: %i[drivers]}
-      end
-
     end
   end
 end

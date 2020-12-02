@@ -3,14 +3,14 @@ module Api
     class DriversController < ApplicationController
       def index
         drivers = Driver.all
-
-        render json: DriverSerializer.new(drivers).serialized_json
+        serializer = DriverSerializer.new()
+        render json: serializer.serialize_drivers(drivers: drivers)
       end
 
       def show
         driver = Driver.find_by(id: params[:id])
-
-        render json: DriverSerializer.new(driver, options).serialized_json
+        serializer = DriverSerializer.new()
+        render json: serializer.serialize_driver(driver: driver, options: 'with cars')
       end
 
       def create
@@ -29,11 +29,7 @@ module Api
       private
 
       def driver_params
-        params.permit(:name, :email, :dateOfBirth, :car_ids)
-      end
-
-      def options
-        @options ||= { include: %i[cars] }
+        params.permit(:name, :email, :dateOfBirth, :car_ids, :image)
       end
 
     end

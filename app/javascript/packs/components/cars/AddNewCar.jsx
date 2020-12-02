@@ -64,7 +64,11 @@ const AddNewCar = ({ data, isLoading }) => {
           try {
             const formData = new FormData();
             Object.keys(values).forEach((key) => {
-              formData.append(key, values[key]);
+              if (typeof values[key] === 'object' && key !== 'image') {
+                formData.append(key, JSON.stringify(values[key]));
+              } else {
+                formData.append(key, values[key]);
+              }
             });
             await createCar(formData);
             await sleep(1000);
