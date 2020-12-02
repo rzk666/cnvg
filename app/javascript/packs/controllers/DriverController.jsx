@@ -11,7 +11,7 @@ import { fetchDriverWithCars } from '../api/apicalls';
 const DriverController = (props) => {
   const location = useLocation();
   const { pathname } = location;
-  const driverId = getIdFromPathname(pathname).toString();
+  const driverId = getIdFromPathname(pathname);
   const newAlert = useAlerts();
   // State
   const [driver, setDriver] = useState({});
