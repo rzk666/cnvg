@@ -39,3 +39,9 @@ export const fetchDriverWithCars = (id) => axios.create()({
   method: 'get',
   url: `${API_ROUTE}/drivers/${id}`,
 });
+
+// ----- Meta Routes ----- //
+export const fetchTimestamps = (type, id) => axios.create()({
+  method: 'get',
+  url: `${API_ROUTE}/carsanddrivers/${id}?type=${type}`,
+});
