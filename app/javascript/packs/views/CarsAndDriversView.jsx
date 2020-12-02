@@ -23,14 +23,14 @@ const MenuProps = {
   },
 };
 
-const DRIVERS = [{ id: 1, name: 'test' }, { id: 2, name: 'test2' }, { id: 3, name: 'test3' }];
-const CARS = [{ id: 1, title: 'test' }, { id: 2, title: 'test2' }, { id: 3, title: 'test3' }];
-
 const CarsAndDriversView = ({
+  isLoading,
   tableData,
   selectedValue,
   selectedType,
-  onChange,
+  handleSelection,
+  drivers,
+  cars,
 }) => (
   <div className={styles.container}>
     <div className={styles.content_container}>
@@ -41,12 +41,12 @@ const CarsAndDriversView = ({
           <Select
             className={styles.select}
             input={<Input />}
-            value={(selectedType === 'driver' && selectedValue) ? selectedValue : ''}
+            value={(selectedType === 'driver' && !!selectedValue) ? selectedValue : ''}
             placeholder="Select driver"
-            onChange={(e) => onChange(e.target.value, 'driver')}
+            onChange={(e) => handleSelection(e.target.value, 'driver')}
             MenuProps={MenuProps}
           >
-            {DRIVERS.map((driver) => {
+            {drivers.map((driver) => {
               const { id, name } = driver;
               return <MenuItem value={id}>{name}</MenuItem>;
             })}
@@ -58,19 +58,19 @@ const CarsAndDriversView = ({
             className={styles.select}
             input={<Input />}
             label="Car"
-            value={(selectedType === 'car' && selectedValue) ? selectedValue : ''}
+            value={(selectedType === 'car' && !!selectedValue) ? selectedValue : ''}
             placeholder="Select car"
-            onChange={(e) => onChange(e.target.value, 'driver')}
+            onChange={(e) => handleSelection(e.target.value, 'car')}
             MenuProps={MenuProps}
           >
-            {CARS.map((car) => {
+            {cars.map((car) => {
               const { id, title } = car;
               return <MenuItem value={id}>{title}</MenuItem>;
             })}
           </Select>
         </FormControl>
       </div>
-      <JoinedTable data={tableData} />
+      <JoinedTable id={selectedValue} isLoading={isLoading} data={tableData} />
     </div>
   </div>
 );

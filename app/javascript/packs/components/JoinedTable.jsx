@@ -8,6 +8,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  CircularProgress,
 } from '@material-ui/core';
 // Utils
 import { makeStyles } from '@material-ui/core/styles';
@@ -21,49 +22,43 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(id, name, createdAt) {
-  return {
-    id, name, createdAt,
-  };
-}
-
-const rows = [
-  createData(1, 'Ferrari', '2019-08-20 19:15:28'),
-  createData(1, 'Ferrari', '2019-08-20 19:15:28'),
-  createData(1, 'Ferrari', '2019-08-20 19:15:28'),
-];
-
-const JoinedTable = () => {
+const JoinedTable = ({ id, isLoading, data }) => {
   const classes = useStyles();
   return (
     <Paper className={classes.wrapper}>
-      <TableContainer className={classes.container}>
-        <Table stickyHeader className={classes.table}>
-          <TableHead>
-            <TableRow>
-              <TableCell align="center">ID</TableCell>
-              <TableCell align="center">Name</TableCell>
-              <TableCell align="center">Created At</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => {
-              const {
-                id, name, createdAt,
-              } = row;
-              return (
-                <TableRow
-                  className={classes.row}
-                >
-                  <TableCell align="center" className={classes.cell}>{id}</TableCell>
-                  <TableCell align="center" className={classes.cell}>{name}</TableCell>
-                  <TableCell align="center" className={classes.cell}>{createdAt}</TableCell>
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      {isLoading ? (
+        <div className={classes.loader_container}>
+          <CircularProgress color="primary" />
+        </div>
+      ) : (
+        <TableContainer className={classes.container}>
+          <Table stickyHeader className={classes.table}>
+            <TableHead>
+              <TableRow>
+                <TableCell align="center">ID</TableCell>
+                <TableCell align="center">Name</TableCell>
+                <TableCell align="center">Created At</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {data.map((row) => {
+                const {
+                  name, created_at,
+                } = row;
+                return (
+                  <TableRow
+                    className={classes.row}
+                  >
+                    <TableCell align="center" className={classes.cell}>{id}</TableCell>
+                    <TableCell align="center" className={classes.cell}>{name}</TableCell>
+                    <TableCell align="center" className={classes.cell}>{created_at}</TableCell>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      )}
     </Paper>
   );
 };
