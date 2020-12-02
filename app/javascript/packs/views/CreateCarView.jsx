@@ -1,17 +1,12 @@
 import React from 'react';
 // Components
-import { Paper } from '@material-ui/core';
-import AddNewCar from '../components/cars/AddNewCar';
-// Styles
-import styles from './CreateCar.module.scss';
+import AddNewEntity from '../components/AddNewEntity';
 
-const CreateCarView = ({ prop }) => (
-  <div className={styles.wrapper}>
-    <Paper className={styles.container}>
-      <h1>Add a new car</h1>
-      <AddNewCar />
-    </Paper>
-  </div>
+const CreateCarView = ({ data }) => (
+  <AddNewEntity
+    data={data}
+    entity="car"
+  />
 );
 
 export default CreateCarView;

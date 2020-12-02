@@ -1,3 +1,6 @@
+# Will use this later to get timestamps for cars and drivers page
+# timestamps = Carsanddriver.where(driver_id: params[:id]).pluck(:created_at)
+
 module Api
   module V1
     class DriversController < ApplicationController
@@ -22,6 +25,10 @@ module Api
 
       def driver_params
         params.permit(:name, :email, :dateOfBirth, car_ids: [])
+      end
+
+      def options
+        @options ||= { include: %i[cars] }
       end
 
     end

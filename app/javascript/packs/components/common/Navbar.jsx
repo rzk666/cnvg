@@ -40,13 +40,13 @@ const Navbar = () => {
         </NavbarLink>
         <NavbarLink
           to={`/${CARS}`}
-          isActive={pathname.includes(CARS)}
+          isActive={pathname.includes(CARS) && !pathname.includes(DRIVERS)}
         >
           Cars
         </NavbarLink>
         <NavbarLink
           to={`/${DRIVERS}`}
-          isActive={pathname.includes(DRIVERS)}
+          isActive={pathname.includes(DRIVERS) && !pathname.includes(CARS)}
         >
           Drivers
         </NavbarLink>

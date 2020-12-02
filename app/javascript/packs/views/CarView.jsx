@@ -7,12 +7,8 @@ import styles from './Car.module.scss';
 
 const CarView = ({ data, addArticle, isLoading }) => (
   <div className={styles.container}>
-    <div className={styles.card_section}>
-      <CarCard />
-    </div>
-    <div className={styles.table_section}>
-      <DriversTable />
-    </div>
+    <CarCard />
+    <DriversTable />
   </div>
 );
 
