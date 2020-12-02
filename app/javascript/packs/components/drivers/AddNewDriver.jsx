@@ -1,5 +1,8 @@
 import React from 'react';
+// Misc
 import { sleep } from '../../utils/libs';
+// Api Calls
+import { createDriver } from '../../api/apicalls';
 // Utils
 import { validateForm, NEW_DRIVER_VALIDATOR } from '../../utils/validators';
 // Components
@@ -22,7 +25,6 @@ import { useAlerts } from '../../contexts/AlertsContext';
 import styles from './AddNewDriver.module.scss';
 
 // ----- Consts & Dicts ----- //
-const CARS = [{ id: 1, name: 'Car One' }, { id: 2, name: 'Car Two' }];
 const ITEM_HEIGHT = 30;
 const ITEM_PADDING_TOP = 8;
 const CarsMenuProps = {
@@ -38,7 +40,7 @@ const initialValues = {
   name: '',
   email: '',
   dateOfBirth: '2000-01-01',
-  cars: [],
+  car_ids: [],
   image: '',
 };
 
@@ -47,7 +49,7 @@ const initialErrors = {
   email: 'This field is required',
 };
 
-const AddNewDriver = ({ onSubmit }) => {
+const AddNewDriver = ({ data, isLoading }) => {
   const newAlert = useAlerts();
   return (
     <div className={styles.container}>
@@ -59,8 +61,16 @@ const AddNewDriver = ({ onSubmit }) => {
         onSubmit={async (values, formikProps) => {
           const { resetForm } = formikProps;
           try {
-            // await onSubmit(values);
-            await sleep(5000);
+            const formData = new FormData();
+            Object.keys(values).forEach((key) => {
+              if (typeof values[key] === 'object') {
+                formData.append(key, JSON.stringify(values[key]));
+              } else {
+                formData.append(key, values[key]);
+              }
+            });
+            await createDriver(formData);
+            await sleep(1000);
             newAlert({ severity: 'success', message: 'Successfully added a new driver!' });
             resetForm(initialValues);
           } catch (e) {
@@ -119,16 +129,17 @@ const AddNewDriver = ({ onSubmit }) => {
               <FormControl style={{ margin: '12px 0' }}>
                 <InputLabel>Cars</InputLabel>
                 <Select
-                  name="cars"
+                  name="car_ids"
                   multiple
                   input={<Input />}
-                  value={values.cars}
+                  value={values.car_ids}
+                  disabled={isLoading}
                   placeholder="Select cars"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   MenuProps={CarsMenuProps}
                 >
-                  {CARS.map((driver) => {
+                  {data.map((driver) => {
                     const { id, name } = driver;
                     return (
                       <MenuItem

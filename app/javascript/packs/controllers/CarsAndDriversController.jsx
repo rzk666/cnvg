@@ -52,8 +52,6 @@ const CarsAndDriversController = (props) => {
       const getTableData = async () => {
         setLoading(true);
         try {
-          console.log(selectedValue);
-          console.log(selectedType);
           const { data } = await fetchTimestamps(selectedType, selectedValue);
           // Fake loading
           await sleep(1000);

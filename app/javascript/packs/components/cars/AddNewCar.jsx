@@ -1,5 +1,8 @@
 import React from 'react';
+// Misc
 import { sleep } from '../../utils/libs';
+// Api Calls
+import { createCar } from '../../api/apicalls';
 // Utils
 import { validateForm, NEW_CAR_VALIDATOR } from '../../utils/validators';
 // Components
@@ -23,7 +26,6 @@ import { useAlerts } from '../../contexts/AlertsContext';
 import styles from './AddNewCar.module.scss';
 
 // ----- Consts & Dicts ----- //
-const DRIVERS = [{ id: 1, name: 'Driver one' }, { id: 2, name: 'Driver Two' }];
 const COLORS = ['red', 'blue', 'yellow'];
 const ITEM_HEIGHT = 30;
 const ITEM_PADDING_TOP = 8;
@@ -40,7 +42,7 @@ const initialValues = {
   title: '',
   model: '',
   color: '',
-  drivers: [],
+  driver_ids: [],
   image: '',
 };
 
@@ -48,7 +50,7 @@ const initialErrors = {
   title: 'This field is required',
 };
 
-const AddNewCar = ({ onSubmit }) => {
+const AddNewCar = ({ data, isLoading }) => {
   const newAlert = useAlerts();
   return (
     <div className={styles.container}>
@@ -60,12 +62,16 @@ const AddNewCar = ({ onSubmit }) => {
         onSubmit={async (values, formikProps) => {
           const { resetForm } = formikProps;
           try {
-            // await onSubmit(values);
-            await sleep(5000);
+            const formData = new FormData();
+            Object.keys(values).forEach((key) => {
+              formData.append(key, values[key]);
+            });
+            await createCar(formData);
+            await sleep(1000);
             newAlert({ severity: 'success', message: 'Successfully added a new car!' });
             resetForm(initialValues);
           } catch (e) {
-            newAlert({ severity: 'Error', message: 'Something went wrong, please try again' });
+            newAlert({ severity: 'error', message: 'Something went wrong, please try again' });
           }
         }}
       >
@@ -129,17 +135,18 @@ const AddNewCar = ({ onSubmit }) => {
               <FormControl style={{ margin: '12px 0' }}>
                 <InputLabel>Drivers</InputLabel>
                 <Select
-                  name="drivers"
+                  name="driver_ids"
                   multiple
+                  disabled={isLoading}
                   input={<Input />}
                   className={styles.drivers_select}
-                  value={values.drivers}
+                  value={values.driver_ids}
                   placeholder="Select drivers"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   MenuProps={ColorMenuProps}
                 >
-                  {DRIVERS.map((driver) => {
+                  {data.map((driver) => {
                     const { id, name } = driver;
                     return (
                       <MenuItem

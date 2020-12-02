@@ -13,7 +13,7 @@ const DriversController = (props) => {
   const [isLoading, setLoading] = useState(false);
   // Mount effect
   useEffect(() => {
-    const getCars = async () => {
+    const getDrivers = async () => {
       setLoading(true);
       try {
         const { data } = await fetchAllDrivers();
@@ -32,7 +32,7 @@ const DriversController = (props) => {
         });
       }
     };
-    getCars();
+    getDrivers();
   }, []);
   const { View } = props;
   return (

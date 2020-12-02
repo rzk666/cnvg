@@ -38,7 +38,7 @@ const CARD_STYLES = {
     margin: 0,
   },
   title: {
-    fontSize: '22px',
+    fontSize: '18px',
     fontWeight: '700',
     color: 'white',
     margin: '0 0 20px 0',

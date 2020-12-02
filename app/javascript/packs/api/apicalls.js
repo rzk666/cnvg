@@ -29,6 +29,12 @@ export const fetchCarWithDrivers = (id) => axios.create()({
   url: `${API_ROUTE}/cars/${id}`,
 });
 
+export const createCar = (data) => axios.create()({
+  method: 'post',
+  url: `${API_ROUTE}/cars`,
+  data,
+});
+
 // ----- Drivers Routes ----- //
 export const fetchAllDrivers = () => axios.create()({
   method: 'get',
@@ -38,6 +44,12 @@ export const fetchAllDrivers = () => axios.create()({
 export const fetchDriverWithCars = (id) => axios.create()({
   method: 'get',
   url: `${API_ROUTE}/drivers/${id}`,
+});
+
+export const createDriver = (data) => axios.create()({
+  method: 'post',
+  url: `${API_ROUTE}/drivers`,
+  data,
 });
 
 // ----- Meta Routes ----- //

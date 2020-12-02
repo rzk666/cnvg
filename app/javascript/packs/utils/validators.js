@@ -31,7 +31,7 @@ export const NEW_CAR_VALIDATOR = {
   title: (title) => validateRequired(title),
   model: () => false,
   color: () => false,
-  drivers: () => false,
+  driver_ids: () => false,
   image: () => false,
 };
 
@@ -47,6 +47,6 @@ export const NEW_DRIVER_VALIDATOR = {
     return error;
   },
   dateOfBirth: () => false,
-  cars: () => false,
+  car_ids: () => false,
   image: () => false,
 };

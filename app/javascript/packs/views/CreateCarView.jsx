@@ -2,9 +2,9 @@ import React from 'react';
 // Components
 import AddNewEntity from '../components/AddNewEntity';
 
-const CreateCarView = ({ data }) => (
+const CreateCarView = ({ drivers }) => (
   <AddNewEntity
-    data={data}
+    data={drivers}
     entity="car"
   />
 );

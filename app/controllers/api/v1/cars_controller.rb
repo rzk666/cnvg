@@ -14,7 +14,9 @@ module Api
       end
 
       def create
-        newCar = Car.new(car_params)
+        createParams = car_params
+        createParams[:driver_ids] = JSON.parse car_params[:driver_ids]
+        newCar = Car.new(createParams)
 
         if newCar.save
           cars = Car.all
@@ -27,7 +29,7 @@ module Api
       private
 
       def car_params
-        params.permit(:title, :model, :color, driver_ids: [])
+        params.permit(:title, :model, :color, :driver_ids)
       end
 
       def options
