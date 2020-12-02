@@ -1,21 +1,23 @@
 :root{
     // Scrollbar
     *::-webkit-scrollbar {
-        width: 0px;
-        height: 0px;
+        width: 10px;
+        height: 2px;
       }
       *::-webkit-scrollbar-track {
         background: transparent;
       }
       *::-webkit-scrollbar-thumb {
-        background-color: var(--main-blue);
+        background-color: var(--main-solid-pink);
         border-radius: 20px;
-      }  
+      }
   // ----- Global Variables ----- //
   --nav-height: 52px;
   // Colors
-  --main-solid-blue: #2970be; 
+  --main-solid-blue: #0287C3; 
   --main-solid-black: #202124;
+  --main-background: #424242;
+  --main-solid-pink: #CC869D;
   // ----- Global Classes ----- //
   .hover_clickable{
       opacity: 0.75;
@@ -31,6 +33,7 @@
       position: fixed;
       width: 100vw!important;
       height: 100vh!important;
+      background-color: var(--main-background);
   }
   body,html {
       font-family: Roboto;

@@ -11,7 +11,7 @@ const BlogController = (props) => {
     setLoading(true);
     const { data } = await addArticle(newArticle);
     // Fake loading
-    await sleep(2000);
+    await sleep(1000);
     setArticles(data.data);
     setLoading(false);
   }, []);
@@ -21,7 +21,7 @@ const BlogController = (props) => {
         setLoading(true);
         const { data } = await fetchArticles();
         // Fake loading
-        await sleep(2000);
+        await sleep(1000);
         setLoading(false);
         setArticles(data.data);
       };

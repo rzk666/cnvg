@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :articles
       resources :drivers, param: :id
-      resources :cars
+      resources :cars, param: :id
+      resources :carsanddrivers, param: :id, only: [:show]
     end
   end
 

@@ -1,19 +1,25 @@
 import React from 'react';
 // Components
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { Paper } from '@material-ui/core';
-import { lightBlue } from '@material-ui/core/colors';
 
 const WithMaterialDarkThemeHOC = (ComposedComponent) => {
   const theme = createMuiTheme({
     palette: {
       type: 'dark',
-      primary: lightBlue,
+      primary: {
+        main: '#CC869D',
+      },
     },
     overrides: {
       MuiButton: {
         root: {
           background: '#CC869D',
+        },
+      },
+      MuiAppBar: {
+        root: {
+          height: '52px;',
+          backgroundColor: '#CC869D',
         },
       },
       MuiPaper: {
@@ -22,18 +28,19 @@ const WithMaterialDarkThemeHOC = (ComposedComponent) => {
           width: '100%',
         },
         rounded: {
-          borderRadius: 0,
+          borderRadius: 15,
+        },
+        elevation1: {
+          boxShadow: '0px 0px 74px 2px rgba(0,0,0,0.23)',
         },
       },
     },
   });
   const WithMaterialDarkTheme = (props) => (
     <ThemeProvider theme={theme}>
-      <Paper>
-        <ComposedComponent
-          {...props}
-        />
-      </Paper>
+      <ComposedComponent
+        {...props}
+      />
     </ThemeProvider>
   );
 

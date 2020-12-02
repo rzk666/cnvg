@@ -15,12 +15,11 @@ const Article = ({ title, text }) => (
 const Articles = ({ data, isLoading }) => (
   <div className={styles.container}>
     <h1>Articles List</h1>
-    <div className={styles.articles_container}>
+    <div style={isLoading ? { height: '100px' } : {}} className={styles.articles_container}>
       { isLoading ? <CircularProgress color="#CC869D" />
         : (
           <div className={styles.articles}>
             {data.map((article) => {
-              console.log(article);
               const { attributes } = article;
               const { title, text } = attributes;
               return <Article text={text} title={title} />;
