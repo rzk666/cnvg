@@ -19,8 +19,7 @@ module Api
         newDriver = Driver.new(createParams)
 
         if newDriver.save
-          drivers = Driver.all
-          render json: DriverSerializer.new(drivers).serialized_json
+          render json: { message: 'Success' }, status: 200
         else
           render json: { error: 'Could not save driver' }, status: 442
         end

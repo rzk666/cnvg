@@ -28,11 +28,11 @@ const CarsAndDriversController = (props) => {
       try {
         const carsRes = await fetchAllCars();
         const driversRes = await fetchAllDrivers();
-        const formattedCars = carsRes.data.data.map((car) => {
+        const formattedCars = carsRes.data.map((car) => {
           const { id, attributes } = car;
           return { id, title: attributes.title };
         });
-        const formattedDrivers = driversRes.data.data.map((driver) => {
+        const formattedDrivers = driversRes.data.map((driver) => {
           const { id, attributes } = driver;
           return { id, name: attributes.name };
         });

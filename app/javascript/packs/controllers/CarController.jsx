@@ -25,10 +25,9 @@ const CarController = (props) => {
         const { data } = await fetchCarWithDrivers(carId);
         const { included, id, attributes } = data;
         const formattedCarData = { id, ...attributes };
-        const formattedDriversData = included.map((driver) => {
-          const { id, attributes } = driver;
-          return { id, ...attributes };
-        });
+        const formattedDriversData = included.map((driver) => ({
+          id: driver.id, ...driver.attributes,
+        }));
         // Fake loading
         await sleep(1000);
         setCar(formattedCarData);

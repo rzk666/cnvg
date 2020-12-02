@@ -17,8 +17,8 @@ const DriversController = (props) => {
       setLoading(true);
       try {
         const { data } = await fetchAllDrivers();
-        const formattedDriversData = data.data.map((car) => {
-          const { id, attributes } = car;
+        const formattedDriversData = data.map((driver) => {
+          const { id, attributes } = driver;
           return { id, ...attributes };
         });
         // Fake loading

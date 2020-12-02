@@ -17,7 +17,7 @@ const CreateCarController = (props) => {
       setLoading(true);
       try {
         const { data } = await fetchAllDrivers();
-        const formattedDriversData = data.data.map((driver) => {
+        const formattedDriversData = data.map((driver) => {
           const { id, attributes } = driver;
           return { id, name: attributes.name };
         });

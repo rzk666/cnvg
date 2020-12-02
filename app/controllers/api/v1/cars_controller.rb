@@ -19,9 +19,7 @@ module Api
         newCar = Car.new(createParams)
 
         if newCar.save
-          cars = Car.all
-          serializer = CarSerializer.new()
-          render json: serializer.serialize_cars(cars: cars)
+          render json: { message: 'Success' }, status: 200
         else
           render json: { error: 'Could not save car' }, status: 442
         end
