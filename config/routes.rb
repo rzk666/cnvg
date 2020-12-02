@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :articles
       resources :drivers, param: :id
       resources :cars, param: :id
+      resources :carsanddrivers, param: :id, only: [:show]
     end
   end
 
