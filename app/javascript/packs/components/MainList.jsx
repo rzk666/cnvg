@@ -8,10 +8,11 @@ import { AddCircle } from '@material-ui/icons';
 import { Tooltip } from '@material-ui/core';
 // Utils
 import { useHistory } from 'react-router-dom';
+import { capitalize } from '../utils/libs';
 // Styles
 import styles from './MainList.module.scss';
 
-const MainList = ({ entity, data }) => {
+const MainList = ({ entity, data, isLoading }) => {
   const history = useHistory();
   const { location } = history;
   const { pathname } = location;
@@ -20,7 +21,7 @@ const MainList = ({ entity, data }) => {
       <div className={styles.content_contaienr}>
         <div className={styles.top_content_container}>
           <div className={styles.title}>
-            <h1>{`${entity}s List`}</h1>
+            <h1>{`${capitalize(entity)}s List`}</h1>
             <p>{`Select a ${entity} for more details`}</p>
           </div>
           <Tooltip title={`Add new ${entity}`}>
@@ -36,9 +37,9 @@ const MainList = ({ entity, data }) => {
           </Tooltip>
         </div>
         {
-            entity === 'Car'
-              ? <CarsTable data={data} />
-              : <DriversTable data={data} />
+            entity === 'car'
+              ? <CarsTable isLoading={isLoading} data={data} />
+              : <DriversTable isLoading={isLoading} data={data} />
         }
       </div>
     </div>

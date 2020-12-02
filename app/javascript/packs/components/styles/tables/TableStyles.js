@@ -24,7 +24,14 @@ const TABLE_STYLES = {
     },
   },
   cell: {
-    fontSize: 18,
+    fontSize: 14,
+  },
+  loader_container: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 };
 

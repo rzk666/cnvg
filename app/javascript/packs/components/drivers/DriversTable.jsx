@@ -1,6 +1,7 @@
 import React from 'react';
 // Components
 import {
+  CircularProgress,
   Paper,
   Table,
   TableBody,
@@ -18,83 +19,62 @@ import { useHistory } from 'react-router-dom';
 // Styles
 import TABLE_STYLES from '../styles/tables/TableStyles';
 
-const useStyles = makeStyles({
-  ...TABLE_STYLES,
-  icon: {
-    width: '100px',
-    height: '100px',
-  },
-});
+const useStyles = makeStyles(TABLE_STYLES);
 
-function createData(id, name, email, dateOfBirth, image) {
-  return {
-    id, name, email, dateOfBirth, image,
-  };
-}
-
-const rows = [
-  createData(1, 'Razi Elbaz', 'raziprojects@gmail.com', '13/08/93', ''),
-  createData(1, 'Razi Elbaz', 'raziprojects@gmail.com', '13/08/93', ''),
-  createData(1, 'Razi Elbaz', 'raziprojects@gmail.com', '13/08/93', ''),
-  createData(1, 'Razi Elbaz', 'raziprojects@gmail.com', '13/08/93', ''),
-  createData(1, 'Razi Elbaz', 'raziprojects@gmail.com', '13/08/93', ''),
-  createData(1, 'Razi Elbaz', 'raziprojects@gmail.com', '13/08/93', ''),
-  createData(1, 'Razi Elbaz', 'raziprojects@gmail.com', '13/08/93', ''),
-  createData(1, 'Razi Elbaz', 'raziprojects@gmail.com', '13/08/93', ''),
-  createData(1, 'Razi Elbaz', 'raziprojects@gmail.com', '13/08/93', ''),
-  createData(1, 'Razi Elbaz', 'raziprojects@gmail.com', '13/08/93', ''),
-  createData(1, 'Razi Elbaz', 'raziprojects@gmail.com', '13/08/93', ''),
-  createData(1, 'Razi Elbaz', 'raziprojects@gmail.com', '13/08/93', ''),
-  createData(1, 'Razi Elbaz', 'raziprojects@gmail.com', '13/08/93', ''),
-];
-
-const DriversTable = () => {
+const DriversTable = ({ isLoading, data }) => {
   const classes = useStyles();
   const history = useHistory();
   return (
     <Paper className={classes.wrapper}>
-      <TableContainer className={classes.container}>
-        <Table stickyHeader className={classes.table}>
-          <TableHead>
-            <TableRow>
-              <TableCell align="center">Name</TableCell>
-              <TableCell align="center">Email</TableCell>
-              <TableCell align="center">Date of Birth</TableCell>
-              <TableCell align="center">Image</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => {
-              const {
-                id, name, email, dateOfBirth, image,
-              } = row;
-              return (
-                <TableRow
-                  className={classes.row}
-                  onClick={() => history.push({ pathname: `/${DRIVERS}/${id}` })}
-                >
-                  <TableCell align="center" className={classes.cell}>{name}</TableCell>
-                  <TableCell align="center" className={classes.cell}>{email}</TableCell>
-                  <TableCell align="center" className={classes.cell}>{dateOfBirth || 'unknown'}</TableCell>
-                  <TableCell align="center">
-                    { image
-                      ? (
-                        <img
-                          src={image}
-                          alt={`${name}_${id}_img`}
-                          className={classes.img}
-                        />
-                      )
-                      : (
-                        <AccountCircle className={classes.icon} />
-                      )}
-                  </TableCell>
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      {isLoading ? (
+        <div className={classes.loader_container}>
+          <CircularProgress color="primary" />
+        </div>
+      ) : (
+        <TableContainer className={classes.container}>
+          <Table stickyHeader className={classes.table}>
+            <TableHead>
+              <TableRow>
+                <TableCell align="center">Name</TableCell>
+                <TableCell align="center">Email</TableCell>
+                <TableCell align="center">Date of Birth</TableCell>
+                <TableCell align="center">Image</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {data.map((row) => {
+                const {
+                  id, name, email, dateOfBirth, image,
+                } = row;
+                const formattedDate = new Date(dateOfBirth).toLocaleDateString();
+                return (
+                  <TableRow
+                    className={classes.row}
+                    onClick={() => history.push({ pathname: `/${DRIVERS}/${id}` })}
+                  >
+                    <TableCell align="center" className={classes.cell}>{name}</TableCell>
+                    <TableCell align="center" className={classes.cell}>{email}</TableCell>
+                    <TableCell align="center" className={classes.cell}>{formattedDate || 'Unknown'}</TableCell>
+                    <TableCell align="center">
+                      { image
+                        ? (
+                          <img
+                            src={image}
+                            alt={`${name}_${id}_img`}
+                            className={classes.img}
+                          />
+                        )
+                        : (
+                          <AccountCircle className={classes.img} />
+                        )}
+                    </TableCell>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      )}
     </Paper>
   );
 };

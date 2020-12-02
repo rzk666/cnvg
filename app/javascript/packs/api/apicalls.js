@@ -23,3 +23,9 @@ export const fetchAllCars = () => axios.create()({
   method: 'get',
   url: `${API_ROUTE}/cars`,
 });
+
+// ----- Drivers Routes ----- //
+export const fetchAllDrivers = () => axios.create()({
+  method: 'get',
+  url: `${API_ROUTE}/drivers`,
+});
