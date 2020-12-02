@@ -34,3 +34,8 @@ export const fetchAllDrivers = () => axios.create()({
   method: 'get',
   url: `${API_ROUTE}/drivers`,
 });
+
+export const fetchDriverWithCars = (id) => axios.create()({
+  method: 'get',
+  url: `${API_ROUTE}/drivers/${id}`,
+});

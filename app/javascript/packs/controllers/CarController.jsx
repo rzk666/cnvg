@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 // Utils
 import { useLocation } from 'react-router-dom';
+// Custom Hooks
+import { useAlerts } from '../contexts/AlertsContext';
 // Misc
 import { sleep, getIdFromPathname } from '../utils/libs';
 // Api Requests
@@ -10,6 +12,7 @@ const CarController = (props) => {
   const location = useLocation();
   const { pathname } = location;
   const carId = getIdFromPathname(pathname).toString();
+  const newAlert = useAlerts();
   // State
   const [car, setCar] = useState({});
   const [drivers, setDrivers] = useState([]);
@@ -18,18 +21,25 @@ const CarController = (props) => {
   useEffect(() => {
     const getCarWithDrivers = async () => {
       setLoading(true);
-      const { data } = await fetchCarWithDrivers(carId);
-      const { included } = data;
-      const formattedCarData = { id: data.data.id, ...data.data.attributes };
-      const formattedDriversData = included.map((driver) => {
-        const { id, attributes } = driver;
-        return { id, ...attributes };
-      });
-      // Fake loading
-      await sleep(1000);
-      setCar(formattedCarData);
-      setDrivers(formattedDriversData);
-      setLoading(false);
+      try {
+        const { data } = await fetchCarWithDrivers(carId);
+        const { included } = data;
+        const formattedCarData = { id: data.data.id, ...data.data.attributes };
+        const formattedDriversData = included.map((driver) => {
+          const { id, attributes } = driver;
+          return { id, ...attributes };
+        });
+        // Fake loading
+        await sleep(1000);
+        setCar(formattedCarData);
+        setDrivers(formattedDriversData);
+        setLoading(false);
+      } catch {
+        newAlert({
+          severity: 'error',
+          message: 'Something went wrong, please try again later',
+        });
+      }
     };
     getCarWithDrivers();
   }, []);

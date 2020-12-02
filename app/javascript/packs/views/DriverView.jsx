@@ -3,16 +3,12 @@ import React from 'react';
 import CarsTable from '../components/cars/CarsTable';
 import DriverCard from '../components/drivers/DriverCard';
 // Styles
-import styles from './Car.module.scss';
+import styles from './Driver.module.scss';
 
-const DriverView = ({ data, addArticle, isLoading }) => (
+const DriverView = ({ isLoading, driver, cars }) => (
   <div className={styles.container}>
-    <div className={styles.card_section}>
-      <DriverCard />
-    </div>
-    <div className={styles.table_section}>
-      <CarsTable />
-    </div>
+    <DriverCard isLoading={isLoading} data={driver} />
+    <CarsTable isLoading={isLoading} data={cars} />
   </div>
 );
 

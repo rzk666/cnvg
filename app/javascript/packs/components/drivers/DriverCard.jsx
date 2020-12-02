@@ -2,73 +2,67 @@ import React from 'react';
 // Components
 import {
   Paper,
+  Button,
 } from '@material-ui/core';
 // Images
 import { AccountCircle } from '@material-ui/icons';
 // Utils
+import classnames from 'classnames';
 import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from 'react-router-dom';
+// Styles
+import CARD_STYLES from '../styles/cards/CardStyles';
 
 // ----- Consts & Dicts ----- //
-const useStyles = makeStyles({
-  container: {
-    height: 700,
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  avatar_container: {
-    display: 'flex',
-    width: '100%',
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderBottom: '1px solid #8F8F8F',
-  },
-  avatar: {
-    borderRadius: '256px',
-    border: '2px solid #8F8F8F',
-    marginBottom: '20px',
-    height: 200,
-    width: 200,
-  },
-  details_container: {
-    height: 150,
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
-  },
-});
+const useStyles = makeStyles(CARD_STYLES);
 
-// TEMP
-const DRIVER = {
-  name: 'Razi Elbaz',
-  email: 'raziprojects@gmail.com',
-  dateOfBirth: '2000-01-01',
-  image: '',
-};
-
-const DriverCard = ({ onSubmit }) => {
+const DriverCard = ({ isLoading, data }) => {
   const classes = useStyles();
+  const history = useHistory();
+  const {
+    name,
+    email,
+    dateOfBirth,
+    image,
+  } = data;
   return (
-    <Paper className={classes.container}>
-      <div className={classes.avatar_container}>
-        { DRIVER.image ? (
-          <img
-            className={classes.avatar}
-            src={DRIVER.image}
-            alt="car"
-          />
-        ) : <AccountCircle className={classes.avatar} /> }
+    <Paper className={classnames(classes.container, { [classes.loading]: isLoading })}>
+      <div className={classes.header}>
+        Driver Profile
       </div>
-      <div className={classes.details_container}>
-        <h1 style={{ margin: 0 }}>{DRIVER.name}</h1>
-        <p style={{ margin: 0 }}>{DRIVER.email}</p>
-        <p style={{ margin: 0 }}>{DRIVER.dateOfBirth}</p>
-      </div>
+      {!isLoading
+      && (
+        <>
+          <>
+            { image
+              ? (
+                <img
+                  className={classes.avatar}
+                  src={image}
+                  alt="driver"
+                />
+              ) : <AccountCircle className={classes.avatar} />}
+          </>
+          <p className={classes.subtitle}>Name</p>
+          <h1 className={classes.title}>{name.toUpperCase()}</h1>
+          <p className={classes.subtitle}>Email</p>
+          <h1 className={classes.title}>{email.toUpperCase()}</h1>
+          { dateOfBirth
+          && (
+          <>
+            <p className={classes.subtitle}>Date of Birth</p>
+            <h1 className={classes.title}>{new Date(dateOfBirth).toLocaleDateString()}</h1>
+          </>
+          )}
+        </>
+      )}
+      <Button
+        color="white"
+        className={classes.btn}
+        onClick={() => history.push('/drivers')}
+      >
+        View all drivers
+      </Button>
     </Paper>
   );
 };
