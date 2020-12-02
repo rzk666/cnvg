@@ -10,6 +10,12 @@ module Api
         render json: DriverSerializer.new(drivers).serialized_json
       end
 
+      def show
+        driver = Driver.find_by(id: params[:id])
+
+        render json: DriverSerializer.new(driver, options).serialized_json
+      end
+
       def create
         newDriver = Driver.new(driver_params)
 

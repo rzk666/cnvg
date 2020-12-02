@@ -5,10 +5,10 @@ import CarCard from '../components/cars/CarCard';
 // Styles
 import styles from './Car.module.scss';
 
-const CarView = ({ data, addArticle, isLoading }) => (
+const CarView = ({ isLoading, drivers, car }) => (
   <div className={styles.container}>
-    <CarCard />
-    <DriversTable />
+    <CarCard isLoading={isLoading} data={car} />
+    <DriversTable data={drivers} isLoading={isLoading} />
   </div>
 );
 

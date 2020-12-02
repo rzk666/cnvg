@@ -18,12 +18,13 @@ const CarsController = (props) => {
         return { id, ...attributes };
       });
         // Fake loading
-      await sleep(2000);
+      await sleep(1000);
       setCars(formattedCarsData);
       setLoading(false);
     };
     getCars();
   }, []);
+  
   const { View } = props;
   return (
     <View

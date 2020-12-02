@@ -7,6 +7,12 @@ module Api
         render json: CarSerializer.new(cars).serialized_json
       end
 
+      def show
+        car = Car.find_by(id: params[:id])
+
+        render json: CarSerializer.new(car, options).serialized_json
+      end
+
       def create
         newCar = Car.new(car_params)
 
@@ -22,6 +28,10 @@ module Api
 
       def car_params
         params.permit(:title, :model, :color, driver_ids: [])
+      end
+
+      def options
+        @options ||= { include: %i[drivers]}
       end
 
     end
